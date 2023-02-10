@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Top from './pages/Top';
+import OuboRegist from './pages/OuboRegist';
+import OuboDetailNc from './pages/OuboDetailNc';
+import OuboDetailOs from './pages/OuboDetailOs';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" exact element={<Login />} />
+        <Route path="/top" exact element={<Top />} />
+        <Route path="/oubo_regist" exact element={<OuboRegist />} />
+        <Route path="/oubo_detail_nc" exact element={<OuboDetailNc />} />
+        <Route path="/oubo_detail_os" exact element={<OuboDetailOs />} />
+      </Routes>
   );
 }
 
