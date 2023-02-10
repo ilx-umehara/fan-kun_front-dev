@@ -6,7 +6,7 @@ import OuboDetailNc from './pages/OuboDetailNc';
 import OuboDetailOs from './pages/OuboDetailOs';
 
 
-function App() {
+function Routing() {
   return (
       <Routes>
         <Route path="/" exact element={<Login />} />
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default Routing;
