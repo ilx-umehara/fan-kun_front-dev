@@ -129,6 +129,7 @@ const styles = {
   },
   contentBasicInformation:{
     minWidth: '100%',
+    height: '25vh',
     "@media screen and (max-width:1400px)": {
       width: "37.5vw",
       fontSize: "1em"
