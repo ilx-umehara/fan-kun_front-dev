@@ -69,46 +69,46 @@ function BasicInformation() {
   return(
     <>
       <div className="contentBlock" css={styles.contentBasicInformation}>
-          <div css={styles.flex}>
-            <div css={styles.basicInfoName}>
-              <img css={styles.icon} src={personCircle} alt="アイコン" />
-              {basicInfoName.map((name) => {
-                return(
-                  <div css={styles.name}>
-                    <p>{name.sei_kana}&emsp;{name.mei_kana}</p>
-                    <h2>{name.sei_kanji}&emsp;{name.mei_kanji}</h2>
-                  </div>
-                )
-              })}
-            </div>
-            <Button onClick={handleOpen} variant="contained">応募履歴</Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-              >
-                <ModalApplicantsHistory />
-            </Modal>
+        <div css={styles.flex}>
+          <div css={styles.basicInfoName}>
+            <img css={styles.icon} src={personCircle} alt="アイコン" />
+            {basicInfoName.map((name) => {
+              return(
+                <div css={styles.name}>
+                  <p>{name.sei_kana}&emsp;{name.mei_kana}</p>
+                  <h2>{name.sei_kanji}&emsp;{name.mei_kanji}</h2>
+                </div>
+              )
+            })}
           </div>
-          <TableContainer>
-            <StyledBasicTable sx={{ minWidth: 250 }} aria-label="simple table">
-              {tableDataLists.map((record) => {
-                return (
-                  <StyledBasicTableRow>
-                    {record.map((item) => {
-                      return(
-                        <>
-                          <StyledBasicTableHead>{item.thead}</StyledBasicTableHead>
-                          <StyledBasicTableCell>{item.tdata}</StyledBasicTableCell>
-                        </>
-                      )
-                    })}
-                  </StyledBasicTableRow>
-                );})
-              }
-            </StyledBasicTable>
-          </TableContainer>
+          <Button onClick={handleOpen} variant="contained">応募履歴</Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            >
+              <ModalApplicantsHistory />
+          </Modal>
+        </div>
+        <TableContainer>
+          <StyledBasicTable sx={{ minWidth: 250 }} aria-label="simple table">
+            {tableDataLists.map((record) => {
+              return (
+                <StyledBasicTableRow>
+                  {record.map((item) => {
+                    return(
+                      <>
+                        <StyledBasicTableHead>{item.thead}</StyledBasicTableHead>
+                        <StyledBasicTableCell>{item.tdata}</StyledBasicTableCell>
+                      </>
+                    )
+                  })}
+                </StyledBasicTableRow>
+              );})
+            }
+          </StyledBasicTable>
+        </TableContainer>
       </div>
     </>
   );
