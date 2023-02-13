@@ -1,5 +1,12 @@
 body{
   background: #f1f6fb !important;
   color: #0047a4 !important;
+  font-size: 16px !important;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif !important;
+}
+
+.contentBlock{
+  background-color: #ffffff;
+  padding: 15px 40px 30px 40px;
+  border-radius: 0.25rem;
 }
