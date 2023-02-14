@@ -100,7 +100,7 @@ function a11yProps(index) {
   };
 }
 
-function EntryInformation() {
+function EntryInformationNc() {
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -112,7 +112,7 @@ function EntryInformation() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { backgroundColor:'#0047A4', height: '5px' } }}>
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }} css={ styles.customTab }>
           <Tab label="基本情報" {...a11yProps(0)} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }}/>
           <Tab label="希望条件" {...a11yProps(1)} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }}/>
         </Tabs>
@@ -179,6 +179,17 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const styles = {
+  customTab:{
+    '& .MuiTabs-flexContainer': {
+      flexWrap: 'wrap'
+    },
+    '& .Mui-selected': {
+      background: '#0047A4',
+      color: '#FFFFFF',
+      borderRadius: '0.25rem',
+      fontWeight: 'bold'
+    }
+  },
   titleAndEditBtn:{
     display: 'flex',
     justifyContent: 'space-between',
@@ -187,8 +198,7 @@ const styles = {
     padding: '5px 16px',
     borderBottom: 'initial',
     color: '#0047A4',
-    fontWeight: 'bold',
   }
 }
 
-export default EntryInformation;
+export default EntryInformationNc;

@@ -4,8 +4,8 @@ import Header from "../components/templates/Header"
 import Footer from "../components/templates/Footer"
 import BasicInformation from "../components/BasicInformation";
 import ApplicantStatus from "../components/ApplicantStatus";
-import EntryInfomation from "../components/EntryInformation";
-
+import EntryInfomationNc from "../components/EntryInformationNc";
+import EntryInfomationOs from "../components/EntryInformationOs";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -19,7 +19,10 @@ const Item = styled(Paper)(({ theme }) => ({
   borderRadius: "0.25rem",
 }));
 
-function OuboDetailNc() {
+//事業部でエントリー情報のコンポーネントの分岐をする
+const division = 'OS';
+
+function OuboDetail() {
   return (
     <>
       <Header />
@@ -37,7 +40,7 @@ function OuboDetailNc() {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
                 <Item>
-                  <EntryInfomation />
+                  { division === 'NC' ? <EntryInfomationNc /> : <EntryInfomationOs />}
                 </Item>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
@@ -52,4 +55,4 @@ function OuboDetailNc() {
 
 
 
-export default OuboDetailNc;
+export default OuboDetail;
