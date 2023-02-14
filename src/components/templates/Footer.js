@@ -16,7 +16,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: '0.8rem'
+    fontSize: '0.8rem',
+    marginTop: '40px',
   }
 }
 

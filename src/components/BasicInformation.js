@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { styled } from '@mui/material/styles'
+import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Table from '@mui/material/Table';
@@ -29,6 +29,7 @@ const StyledBasicTableCell = styled(TableCell)(() => ({
   width: '30%',
   padding: '5px',
   fontWeight: 'bold',
+  fontSize: '1rem',
   marginRight: '10px',
 }))
 
@@ -99,7 +100,7 @@ function BasicInformation() {
                   {record.map((item) => {
                     return(
                       <>
-                        <StyledBasicTableHead>{item.thead}</StyledBasicTableHead>
+                        <StyledBasicTableHead align="left">{item.thead}</StyledBasicTableHead>
                         <StyledBasicTableCell>{item.tdata}</StyledBasicTableCell>
                       </>
                     )
@@ -128,12 +129,9 @@ const styles = {
     textAlign: 'center',
   },
   contentBasicInformation:{
-    minWidth: '100%',
-    height: '25vh',
-    "@media screen and (max-width:1400px)": {
-      width: "37.5vw",
-      fontSize: "1em"
-    },
+    margin: '15px 40px 30px 40px',
+    height: '20vh',
+    fontSize:'0.8em',
   },
   contentsHeaderTitle:{
     display: 'inline-block',

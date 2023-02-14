@@ -48,7 +48,7 @@ function ModalApplicantsHistory() {
   return (
     <Box css={styles.modal}>
       <Typography id="modal-modal-title" variant="h6" component="h2">
-        <h4 css={styles.contentsHeaderTitle}>応募履歴一覧</h4>
+        <p className="contentBlockTitle">応募履歴一覧</p>
       </Typography>
       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
         <TableContainer component={Paper}>

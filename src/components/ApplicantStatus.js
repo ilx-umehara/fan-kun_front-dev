@@ -24,6 +24,7 @@ const StyledBasicTableCell = styled(TableCell)(() => ({
   width: '60%',
   padding: '5px',
   fontWeight: 'bold',
+  fontSize: '1rem',
   marginRight: '10px',
 }))
 
@@ -47,7 +48,7 @@ function ApplicantStatus() {
               {tableDataLists.map((item) => {
               return (
                   <StyledBasicTableRow>
-                    <StyledBasicTableHead>{item.thead}</StyledBasicTableHead>
+                    <StyledBasicTableHead align="left">{item.thead}</StyledBasicTableHead>
                     <StyledBasicTableCell>{item.tdata}</StyledBasicTableCell>
                   </StyledBasicTableRow>
                 );
@@ -81,7 +82,9 @@ function ApplicantStatus() {
 
 const styles = {
   contentStatus:{
-    height: '25vh',
+    margin: '15px 40px 30px 40px',
+    height: '20vh',
+    fontSize:'0.8em',
   },
   statusHeader:{
     display: 'flex',

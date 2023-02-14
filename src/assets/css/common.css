@@ -1,12 +1,20 @@
 body{
   background: #f1f6fb !important;
   color: #0047a4 !important;
-  font-size: 16px !important;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif !important;
 }
 
 .contentBlock{
   background-color: #ffffff;
-  padding: 15px 40px 30px 40px;
+  margin: 2% 4% 3% 4%;
   border-radius: 0.25rem;
+}
+
+.contentBlockTitle{
+  display: inline-block;
+  height: 30px;
+  background-color: #c6e0f7;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
