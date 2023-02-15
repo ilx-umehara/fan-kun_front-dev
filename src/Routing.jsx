@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Top from './pages/Top';
+import Login from './components/pages/Login';
+import Top from './components/pages/Top';
 import ApplicantsRegistPage from './components/pages/ApplicantsRegistPage';
 import ApplicantsDetailPage from './components/pages/ApplicantsDetailPage';
 

@@ -11,8 +11,9 @@ import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 
 import StyledMuiTabs from '../../ui/tab/StyledMuiTabs';
-import StyledMuiTableCell from '../../ui/table/StyledMuiTableCell';
-import StyledMuiTableRow from '../../ui/table/StyledMuiTableRow';
+import StyledMuiTableCell from '../../ui/table/StyledMuiTable/StyledMuiTableCell';
+import StyledMuiTableRow from '../../ui/table/StyledMuiTable/StyledMuiTableRow';
+import StyledMuiPaper from '../../ui/surface//StyledMuiPaper';
 
 const tableDataListsBasicInfo = [
   { 'thead': '姓(漢字)', 'tdata': '応募' },
@@ -138,53 +139,18 @@ function ApplicantsEntryInfo() {
   const handleClose = () => setOpen(false);
   if(division === 'NC'){
     return (
-      <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
-            {tabHeaderNc.map((head, i) => {
-              return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }}/>
-            })}
-            
-          </StyledMuiTabs>
-        </Box>
-        {tabPanelListsNc.map((panel, k) => {
-          return (
-          <TabPanel value={value} index={k}>
-            <div css={styles.titleAndEditBtn}>
-              <p className="contentBlockTitle">エントリー情報</p>
-              <Button onClick={handleOpen} variant="contained">編集</Button>
-            </div>
-            <TableContainer component={Paper} sx={{ my:3, height: '47.22222222222222vh' }}>
-              <Table sx={{ minWidth: 250 }} aria-label="simple table">
-              {panel.map((item) => {
-                return (
-                  <StyledMuiTableRow>
-                    <TableHead align="left" sx={{ width: '35%', display: 'table-cell',padding: '5px 16px' }}>{item.thead}</TableHead>
-                    <StyledMuiTableCell css={styles.tdata}>{item.tdata}</StyledMuiTableCell>
-                  </StyledMuiTableRow>
-                );
+      <StyledMuiPaper>
+        <Box sx={{ width: '100%' }}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
+              {tabHeaderNc.map((head, i) => {
+                return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }}/>
               })}
-              </Table>
-            </TableContainer>
-          </TabPanel>
-          )
-        })}
-        <Button onClick={handleOpen} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>
-      </Box>
-    );
-  }else if(division === 'OS') {
-    return (
-      <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
-          <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
-            {tabHeaderOs.map((head, i) => {
-              return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '16.66%' }}/>
-            })}
-          </StyledMuiTabs>
-        </Box>
-        {tabPanelListsOs.map((panel, j) => {
-          return (
-            <TabPanel value={value} index={j}>
+            </StyledMuiTabs>
+          </Box>
+          {tabPanelListsNc.map((panel, k) => {
+            return (
+            <TabPanel value={value} index={k}>
               <div css={styles.titleAndEditBtn}>
                 <p className="contentBlockTitle">エントリー情報</p>
                 <Button onClick={handleOpen} variant="contained">編集</Button>
@@ -202,10 +168,48 @@ function ApplicantsEntryInfo() {
                 </Table>
               </TableContainer>
             </TabPanel>
-          )
-        })}
-        <Button onClick={handleOpen} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>
-      </Box>
+            )
+          })}
+          <Button onClick={handleOpen} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>
+        </Box>
+      </StyledMuiPaper>
+    );
+  }else if(division === 'OS') {
+    return (
+      <StyledMuiPaper>
+        <Box sx={{ width: '100%' }}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
+            <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
+              {tabHeaderOs.map((head, i) => {
+                return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '16.66%' }}/>
+              })}
+            </StyledMuiTabs>
+          </Box>
+          {tabPanelListsOs.map((panel, j) => {
+            return (
+              <TabPanel value={value} index={j}>
+                <div css={styles.titleAndEditBtn}>
+                  <p className="contentBlockTitle">エントリー情報</p>
+                  <Button onClick={handleOpen} variant="contained">編集</Button>
+                </div>
+                <TableContainer component={Paper} sx={{ my:3, height: '47.22222222222222vh' }}>
+                  <Table sx={{ minWidth: 250 }} aria-label="simple table">
+                  {panel.map((item) => {
+                    return (
+                      <StyledMuiTableRow>
+                        <TableHead align="left" sx={{ width: '35%', display: 'table-cell',padding: '5px 16px' }}>{item.thead}</TableHead>
+                        <StyledMuiTableCell css={styles.tdata}>{item.tdata}</StyledMuiTableCell>
+                      </StyledMuiTableRow>
+                    );
+                  })}
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+            )
+          })}
+          <Button onClick={handleOpen} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>
+        </Box>
+      </StyledMuiPaper>
     );
   }
 }

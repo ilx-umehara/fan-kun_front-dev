@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { styled } from '@mui/material/styles';
+
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Table from '@mui/material/Table';
@@ -8,30 +9,15 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import ModalApplicantsHistory from './modals/ModalApplicantsHistory';
+import ModalApplicantsHistory from '../modals/ModalApplicantsHistory';
 import personCircleWoman from "../../../assets/images/person_circle_woman.svg";
 import personCircleMan from "../../../assets/images/person_circle_man.svg";
 
-const StyledBasicTable = styled(Table)(() => ({
-  marginTop: '20px',
-  width: '100%',
-}))
-const StyledBasicTableRow = styled(TableRow)(() => ({
-  display: 'flex',
-
-  alignItems: 'center',
-}))
-const StyledBasicTableHead = styled(TableHead)(() => ({
-  width: '20%',
-  padding: '5px',
-}))
-const StyledBasicTableCell = styled(TableCell)(() => ({
-  width: '30%',
-  padding: '5px',
-  fontWeight: 'bold',
-  fontSize: '1rem',
-  marginRight: '10px',
-}))
+import StyledMuiPaper from '../../ui/surface/StyledMuiPaper';
+import StyledSideToSideTable from '../../ui/table/StyledSideToSideTable/StyledSideToSideTable';
+import StyledSideToSideTableCell from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableCell';
+import StyledSideToSideTableHead from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableHead';
+import StyledSideToSideTableRow from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableRow';
 
 
 const basicInfoName = [
@@ -68,7 +54,7 @@ function BasicInformation() {
   const handleClose = () => setOpen(false);
 
   return(
-    <>
+    <StyledMuiPaper>
       <div className="contentBlock" css={styles.contentBasicInformation}>
         <div css={styles.flex}>
           <div css={styles.basicInfoName}>
@@ -93,25 +79,25 @@ function BasicInformation() {
           </Modal>
         </div>
         <TableContainer>
-          <StyledBasicTable sx={{ minWidth: 250 }} aria-label="simple table">
+          <StyledSideToSideTable sx={{ minWidth: 250 }} aria-label="simple table">
             {tableDataLists.map((record) => {
               return (
-                <StyledBasicTableRow>
+                <StyledSideToSideTableRow>
                   {record.map((item) => {
                     return(
                       <>
-                        <StyledBasicTableHead align="left">{item.thead}</StyledBasicTableHead>
-                        <StyledBasicTableCell>{item.tdata}</StyledBasicTableCell>
+                        <StyledSideToSideTableHead align="left">{item.thead}</StyledSideToSideTableHead>
+                        <StyledSideToSideTableCell>{item.tdata}</StyledSideToSideTableCell>
                       </>
                     )
                   })}
-                </StyledBasicTableRow>
+                </StyledSideToSideTableRow>
               );})
             }
-          </StyledBasicTable>
+          </StyledSideToSideTable>
         </TableContainer>
       </div>
-    </>
+    </StyledMuiPaper>
   );
 }
 
@@ -130,7 +116,7 @@ const styles = {
   },
   contentBasicInformation:{
     margin: '15px 40px 30px 40px',
-    height: '20vh',
+    height: '19vh',
     fontSize:'0.8em',
   },
   contentsHeaderTitle:{

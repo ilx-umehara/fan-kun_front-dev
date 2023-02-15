@@ -7,26 +7,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-const StyledBasicTable = styled(Table)(() => ({
-  marginTop: '20px',
-  width: '90%',
-}))
-const StyledBasicTableRow = styled(TableRow)(() => ({
-  display: 'flex',
+import StyledMuiPaper from '../../ui/surface/StyledMuiPaper';
+import StyledSideToSideTable from '../../ui/table/StyledSideToSideTable/StyledSideToSideTable';
+import StyledSideToSideTableCell from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableCell';
+import StyledSideToSideTableHead from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableHead';
+import StyledSideToSideTableRow from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableRow';
 
-  alignItems: 'center',
-}))
-const StyledBasicTableHead = styled(TableHead)(() => ({
-  width: '40%',
-  padding: '5px',
-}))
-const StyledBasicTableCell = styled(TableCell)(() => ({
-  width: '60%',
-  padding: '5px',
-  fontWeight: 'bold',
-  fontSize: '1rem',
-  marginRight: '10px',
-}))
 
 const tableDataLists = [
   { 'thead': '本人確認書類', 'tdata': '未対応' },
@@ -36,7 +22,7 @@ const tableDataLists = [
 
 function ApplicantStatus() {
   return (
-    <>
+    <StyledMuiPaper>
       <div className="contentBlock" css={styles.contentStatus}>
         <div css={styles.statusHeader}>
             <h2>呼び込み中</h2>
@@ -44,16 +30,16 @@ function ApplicantStatus() {
         </div>
         <div css={styles.statusItme}>
           <TableContainer>
-            <StyledBasicTable sx={{ minWidth: 250 }} aria-label="simple table">
+            <StyledSideToSideTable sx={{ minWidth: 250 }} aria-label="simple table">
               {tableDataLists.map((item) => {
               return (
-                  <StyledBasicTableRow>
-                    <StyledBasicTableHead align="left">{item.thead}</StyledBasicTableHead>
-                    <StyledBasicTableCell>{item.tdata}</StyledBasicTableCell>
-                  </StyledBasicTableRow>
+                  <StyledSideToSideTableRow>
+                    <StyledSideToSideTableHead align="left">{item.thead}</StyledSideToSideTableHead>
+                    <StyledSideToSideTableCell>{item.tdata}</StyledSideToSideTableCell>
+                  </StyledSideToSideTableRow>
                 );
               })}
-            </StyledBasicTable>
+            </StyledSideToSideTable>
           </TableContainer>
           <div css={styles.statusFigure}>
             <div>
@@ -74,16 +60,15 @@ function ApplicantStatus() {
             </div>
           </div>
         </div>
-
       </div>
-    </>
+      </StyledMuiPaper>
   );
 }
 
 const styles = {
   contentStatus:{
     margin: '15px 40px 30px 40px',
-    height: '20vh',
+    height: '19vh',
     fontSize:'0.8em',
   },
   statusHeader:{
