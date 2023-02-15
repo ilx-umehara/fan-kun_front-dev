@@ -8,9 +8,9 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import ModalApplicantsHistory from './modals/ModalApplicantsHistory'
-import personCircleWoman from "../assets/images/person_circle_woman.svg";
-import personCircleMan from "../assets/images/person_circle_man.svg";
+import ModalApplicantsHistory from './modals/ModalApplicantsHistory';
+import personCircleWoman from "../../../assets/images/person_circle_woman.svg";
+import personCircleMan from "../../../assets/images/person_circle_man.svg";
 
 const StyledBasicTable = styled(Table)(() => ({
   marginTop: '20px',

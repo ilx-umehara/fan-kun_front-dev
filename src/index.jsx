@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./assets/css/reset.css";
-import './index.css';
 import "./assets/css/common.css";
 import Routing from './Routing';
 import reportWebVitals from './reportWebVitals';

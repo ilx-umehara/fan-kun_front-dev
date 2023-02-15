@@ -1,11 +1,10 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import Header from "../components/templates/Header"
-import Footer from "../components/templates/Footer"
-import BasicInformation from "../components/BasicInformation";
-import ApplicantStatus from "../components/ApplicantStatus";
-import EntryInfomationNc from "../components/EntryInformationNc";
-import EntryInfomationOs from "../components/EntryInformationOs";
+import Header from "./templates/Header"
+import Footer from "./templates/Footer"
+import ApplicantsBasicInfo from "../feature/ApplicantsDetail/ApplicantsBasicInfo";
+import ApplicantProgressStatus from "../feature/ApplicantsDetail/ApplicantsProgressStatus";
+import ApplicantsEntryInfo from "../feature/ApplicantsDetail/ApplicantsEntryInfo";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -19,28 +18,26 @@ const Item = styled(Paper)(({ theme }) => ({
   borderRadius: "0.25rem",
 }));
 
-//事業部でエントリー情報のコンポーネントの分岐をする
-const division = 'OS';
-
-function OuboDetail() {
+function ApplicantsDetailPage() {
   return (
     <>
       <Header />
+
       <Box sx={{ width: '100%' }}>
         <Grid container spacing={2} rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 2 }} sx={{px:5}}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
               <Item>
-                <BasicInformation />
+                <ApplicantsBasicInfo />
               </Item>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
               <Item>
-                <ApplicantStatus />
+                <ApplicantProgressStatus />
               </Item>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
                 <Item>
-                  { division === 'NC' ? <EntryInfomationNc /> : <EntryInfomationOs />}
+                  <ApplicantsEntryInfo />
                 </Item>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
@@ -48,6 +45,7 @@ function OuboDetail() {
             </Grid>
         </Grid>
       </Box>
+      
       <Footer />
     </>
   );
@@ -55,4 +53,4 @@ function OuboDetail() {
 
 
 
-export default OuboDetail;
+export default ApplicantsDetailPage;
