@@ -10,10 +10,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 
-import StyledMuiTabs from '../../ui/tab/StyledMuiTabs';
-import StyledMuiTableCell from '../../ui/table/StyledMuiTable/StyledMuiTableCell';
-import StyledMuiTableRow from '../../ui/table/StyledMuiTable/StyledMuiTableRow';
-import StyledMuiPaper from '../../ui/surface//StyledMuiPaper';
+import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
+import StyledMuiTableCell from '../../parts/table/StyledMuiTable/StyledMuiTableCell';
+import StyledMuiTableRow from '../../parts/table/StyledMuiTable/StyledMuiTableRow';
+import StyledMuiPaper from '../../parts/surface//StyledMuiPaper';
 
 const tableDataListsBasicInfo = [
   { 'thead': '姓(漢字)', 'tdata': '応募' },

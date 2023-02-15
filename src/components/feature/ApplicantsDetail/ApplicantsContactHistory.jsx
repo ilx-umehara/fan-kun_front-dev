@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { styled } from '@mui/material/styles';
-import StyledMuiPaper from '../../ui/surface/StyledMuiPaper';
+import StyledMuiPaper from '../../parts/surface/StyledMuiPaper';
 import Button from '@mui/material/Button';
 
 function ApplicantsContactHistory(){

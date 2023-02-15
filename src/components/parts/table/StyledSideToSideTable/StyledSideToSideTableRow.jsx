@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { styled } from '@mui/material/styles';
 import TableRow from '@mui/material/TableRow';
 

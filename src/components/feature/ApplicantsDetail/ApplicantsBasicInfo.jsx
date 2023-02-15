@@ -1,23 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { styled } from '@mui/material/styles';
 
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import Table from '@mui/material/Table';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import ModalApplicantsHistory from '../modals/ModalApplicantsHistory';
 import personCircleWoman from "../../../assets/images/person_circle_woman.svg";
 import personCircleMan from "../../../assets/images/person_circle_man.svg";
 
-import StyledMuiPaper from '../../ui/surface/StyledMuiPaper';
-import StyledSideToSideTable from '../../ui/table/StyledSideToSideTable/StyledSideToSideTable';
-import StyledSideToSideTableCell from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableCell';
-import StyledSideToSideTableHead from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableHead';
-import StyledSideToSideTableRow from '../../ui/table/StyledSideToSideTable/StyledSideToSideTableRow';
+import StyledMuiPaper from '../../parts/surface/StyledMuiPaper';
+import StyledSideToSideTable from '../../parts/table/StyledSideToSideTable/StyledSideToSideTable';
+import StyledSideToSideTableCell from '../../parts/table/StyledSideToSideTable/StyledSideToSideTableCell';
+import StyledSideToSideTableHead from '../../parts/table/StyledSideToSideTable/StyledSideToSideTableHead';
+import StyledSideToSideTableRow from '../../parts/table/StyledSideToSideTable/StyledSideToSideTableRow';
 
 
 const basicInfoName = [
