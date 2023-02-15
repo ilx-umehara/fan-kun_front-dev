@@ -17,7 +17,7 @@ const tableDataLists = [
 
 function ApplicantStatus() {
   return (
-    <StyledMuiPaper>
+    <StyledMuiPaper sx={{ height: '24.64722222222222vh' }}>
       <div className="contentBlock" css={styles.contentStatus}>
         <div css={styles.statusHeader}>
             <h2>呼び込み中</h2>
@@ -63,7 +63,6 @@ function ApplicantStatus() {
 const styles = {
   contentStatus:{
     margin: '15px 40px 30px 40px',
-    height: '19vh',
     fontSize:'0.8em',
   },
   statusHeader:{

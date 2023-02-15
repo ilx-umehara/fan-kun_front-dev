@@ -7,11 +7,11 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 
 import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
 import StyledMuiTableCell from '../../parts/table/StyledMuiTable/StyledMuiTableCell';
+import StyledMuiTableHead from '../../parts/table/StyledMuiTable/StyledMuiTableHead';
 import StyledMuiTableRow from '../../parts/table/StyledMuiTable/StyledMuiTableRow';
 import StyledMuiPaper from '../../parts/surface//StyledMuiPaper';
 
@@ -139,7 +139,7 @@ function ApplicantsEntryInfo() {
   const handleClose = () => setOpen(false);
   if(division === 'NC'){
     return (
-      <StyledMuiPaper>
+      <StyledMuiPaper sx={{ height: '73.33333333333333vh' }}>
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
@@ -160,8 +160,8 @@ function ApplicantsEntryInfo() {
                 {panel.map((item) => {
                   return (
                     <StyledMuiTableRow>
-                      <TableHead align="left" sx={{ width: '35%', display: 'table-cell',padding: '5px 16px' }}>{item.thead}</TableHead>
-                      <StyledMuiTableCell css={styles.tdata}>{item.tdata}</StyledMuiTableCell>
+                      <StyledMuiTableHead align="left">{item.thead}</StyledMuiTableHead>
+                      <StyledMuiTableCell>{item.tdata}</StyledMuiTableCell>
                     </StyledMuiTableRow>
                   );
                 })}
@@ -176,7 +176,7 @@ function ApplicantsEntryInfo() {
     );
   }else if(division === 'OS') {
     return (
-      <StyledMuiPaper>
+      <StyledMuiPaper sx={{ height: '73.33333333333333vh' }}>
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
@@ -192,13 +192,13 @@ function ApplicantsEntryInfo() {
                   <p className="contentBlockTitle">エントリー情報</p>
                   <Button onClick={handleOpen} variant="contained">編集</Button>
                 </div>
-                <TableContainer component={Paper} sx={{ my:3, height: '47.22222222222222vh' }}>
+                <TableContainer component={Paper} sx={{ mt:3, height: '47vh' }}>
                   <Table sx={{ minWidth: 250 }} aria-label="simple table">
                   {panel.map((item) => {
                     return (
                       <StyledMuiTableRow>
-                        <TableHead align="left" sx={{ width: '35%', display: 'table-cell',padding: '5px 16px' }}>{item.thead}</TableHead>
-                        <StyledMuiTableCell css={styles.tdata}>{item.tdata}</StyledMuiTableCell>
+                        <StyledMuiTableHead align="left">{item.thead}</StyledMuiTableHead>
+                        <StyledMuiTableCell>{item.tdata}</StyledMuiTableCell>
                       </StyledMuiTableRow>
                     );
                   })}
@@ -207,8 +207,9 @@ function ApplicantsEntryInfo() {
               </TabPanel>
             )
           })}
-          <Button onClick={handleOpen} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>
+          
         </Box>
+        <Button onClick={handleOpen} variant="contained" sx={{mt: 1}}>修正依頼の送信</Button>
       </StyledMuiPaper>
     );
   }
@@ -218,16 +219,13 @@ function ApplicantsEntryInfo() {
 
 
 const styles = {
-
   titleAndEditBtn:{
     display: 'flex',
     justifyContent: 'space-between',
   },
-  tdata:{
-    padding: '5px 16px',
-    borderBottom: 'initial',
-    color: '#0047A4',
-    verticalAlign: 'baseline',
+  btnArea:{
+    background: 'red',
+    padding: '1% 0',
   }
 }
 

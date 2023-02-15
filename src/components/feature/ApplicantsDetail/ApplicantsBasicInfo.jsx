@@ -49,7 +49,7 @@ function BasicInformation() {
   const handleClose = () => setOpen(false);
 
   return(
-    <StyledMuiPaper>
+    <StyledMuiPaper sx={{ height: '24.64722222222222vh' }}>
       <div className="contentBlock" css={styles.contentBasicInformation}>
         <div css={styles.flex}>
           <div css={styles.basicInfoName}>
@@ -111,7 +111,6 @@ const styles = {
   },
   contentBasicInformation:{
     margin: '15px 40px 30px 40px',
-    height: '19vh',
     fontSize:'0.8em',
   },
   contentsHeaderTitle:{

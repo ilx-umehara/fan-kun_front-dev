@@ -8,6 +8,11 @@ const StyledMuiTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     borderBottom: 'initial',
   },
+  padding: '5px 16px',
+  borderBottom: 'initial',
+  color: '#0047A4',
+  verticalAlign: 'baseline',
+  fontWeight: 'bold',
 }));
 
 export default StyledMuiTableCell;
