@@ -19,13 +19,13 @@ function ApplicantsDetailPage() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
               <ApplicantsBasicInfo />
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={7} sx={{ display: 'flex' }}>
               <ApplicantProgressStatus />
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
                 <ApplicantsEntryInfo />
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={5} sx={{ display: 'flex' }}>
             <ApplicantsContactHistory />
           </Grid>
         </Grid>

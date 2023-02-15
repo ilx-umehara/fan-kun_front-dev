@@ -17,7 +17,7 @@ const tableDataLists = [
 
 function ApplicantStatus() {
   return (
-    <StyledMuiPaper sx={{ height: '24.64722222222222vh' }}>
+    <StyledMuiPaper sx={{ flexShrink: '0', width: '100%' }}>
       <div className="contentBlock" css={styles.contentStatus}>
         <div css={styles.statusHeader}>
             <h2>呼び込み中</h2>
@@ -68,6 +68,7 @@ const styles = {
   statusHeader:{
     display: 'flex',
     width: '50%',
+    height: '50px',
     margin: '0 auto',
     justifyContent: 'center',
     alignItems: 'center',
@@ -77,7 +78,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'spaceBetween',
     alignItems: 'center',
-    marginTop: '20px'
+    height: '12.70277777777778vh'
+
   },
   statusFigure:{
     minWidth: '50%',

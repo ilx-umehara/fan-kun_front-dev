@@ -49,7 +49,7 @@ function ApplicantsContactHistory(){
   const handleClose = () => setOpen(false);
 
   return (
-    <StyledMuiPaper sx={{ height: '73.33333333333333vh' }}>
+    <StyledMuiPaper sx={{ flexShrink: '0', width: '100%' }}>
       <div css={styles.titleAndEditBtn}>
         <p className="contentBlockTitle">コンタクト履歴</p>
         <Button onClick={handleOpen} variant="contained">新規登録</Button>

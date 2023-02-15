@@ -176,7 +176,7 @@ function ApplicantsEntryInfo() {
     );
   }else if(division === 'OS') {
     return (
-      <StyledMuiPaper sx={{ height: '73.33333333333333vh' }}>
+      <StyledMuiPaper sx={{ minHeight: '73.33333333333333vh' }}>
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>

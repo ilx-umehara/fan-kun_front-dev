@@ -49,7 +49,7 @@ function BasicInformation() {
   const handleClose = () => setOpen(false);
 
   return(
-    <StyledMuiPaper sx={{ height: '24.64722222222222vh' }}>
+    <StyledMuiPaper sx={{ minHeight: '24.64722222222222vh' }}>
       <div className="contentBlock" css={styles.contentBasicInformation}>
         <div css={styles.flex}>
           <div css={styles.basicInfoName}>
