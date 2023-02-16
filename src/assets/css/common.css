@@ -4,6 +4,36 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif !important;
 }
 
+.responsiveAppBar125{
+  transform: scaleY(0.875);
+  transform-origin: left top ;
+}
+.responsiveToolbar125{
+  transform: scaleX(0.875);
+  transform-origin: left top ;
+}
+
+.responsiveAppBar150{
+  transform: scaleY(0.75);
+  transform-origin: left top ;
+}
+
+.responsiveToolbar150{
+  transform: scaleX(0.75);
+  transform-origin: left top ;
+}
+
+.responsiveMain125{
+  transform: scale(0.875);
+  
+}
+.responsiveMain150{
+  transform: scale(0.75);
+}
+.responsiveFooter{
+
+}
+
 .contentBlock{
   background-color: #ffffff;
   margin: 2% 4% 3% 4%;

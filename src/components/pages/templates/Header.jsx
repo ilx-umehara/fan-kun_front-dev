@@ -23,11 +23,14 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 
 const drawerWidth = 240;
 
+
+
 const appBarCustomTheme = createTheme ({
   palette: {
     secondary: {
       main: "#c6e0f7",
-      contrastText: "#0047a4"
+      contrastText: "#0047a4",
+      width: '100vw',
     }
   }
 })
@@ -77,7 +80,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft() {
+export default function Header() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -88,6 +91,20 @@ export default function PersistentDrawerLeft() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  // let responsiveAppBar;
+  // let responsiveToolbar;
+  // const devicePixelRatio = window.devicePixelRatio;
+  // console.log(devicePixelRatio);
+
+  // if(devicePixelRatio > 1 && devicePixelRatio <= 1.25){
+  //   responsiveAppBar = 'responsiveAppBar125';
+  //   responsiveToolbar = 'responsiveToolbar125';
+  // }else if(devicePixelRatio > 1.25 && devicePixelRatio <= 1.5){
+  //   responsiveAppBar = 'responsiveAppBar150';
+  //   responsiveToolbar = 'responsiveToolbar150';
+  // }
+
 
   return (
     <Box sx={{ display: 'flex' }}>
