@@ -80,7 +80,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function Header() {
+const Header = props => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -105,7 +105,6 @@ export default function Header() {
   //   responsiveToolbar = 'responsiveToolbar150';
   // }
 
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -121,9 +120,7 @@ export default function Header() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              応募者管理画面
-            </Typography>
+            <Typography variant="h6" noWrap component="div">{props.headerTitle}</Typography>
           </Toolbar>
         </AppBar>
       </ThemeProvider>
@@ -178,3 +175,5 @@ export default function Header() {
     </Box>
   );
 }
+
+export default Header;
