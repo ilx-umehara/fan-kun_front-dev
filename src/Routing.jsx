@@ -4,7 +4,7 @@ import Top from './components/pages/Top';
 import ApplicantsListPage from './components/pages/ApplicantsListPage';
 import ApplicantsDetailPage from './components/pages/ApplicantsDetailPage';
 import ApplicantsRegistPage from './components/pages/ApplicantsRegistPage';
-import WebEntry from './components/pages/WebEntryPage';
+import WebEntryPage from './components/pages/WebEntryPage';
 
 
 
@@ -18,7 +18,7 @@ function Routing() {
           <Route path=":appli_id" element={<ApplicantsDetailPage />} />
         </Route>
         <Route path="/oubo_regist" exact element={<ApplicantsRegistPage />} />
-        <Route path="/web_entry" exact element={<WebEntry />} />
+        <Route path="/web_entry" exact element={<WebEntryPage />} />
       </Routes>
   );
 }

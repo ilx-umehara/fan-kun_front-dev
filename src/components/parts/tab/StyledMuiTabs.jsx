@@ -11,6 +11,7 @@ const StyledMuiTabs = styled(Tabs)(({ theme }) => ({
     borderRadius: '0.25rem',
     fontWeight: 'bold'
   },
+
 }));
 
 export default StyledMuiTabs;

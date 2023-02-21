@@ -2,8 +2,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -15,18 +13,16 @@ import TableRow from '@mui/material/TableRow';
 
 
 const columns = [
-  { id: 'appli_id', label: '応募者ID', minWidth: 100 },
+  { id: 'increment', label: 'No', maxWidth: 30 },
   { id: 'name', label: '名前', minWidth: 100 },
+  { id: 'appli_id', label: '応募者ID', minWidth: 100 },
   { id: 'birthday', label: '生年月日',},
   { id: 'gender', label: '性別',},
-  { id: 'media', label: '応募媒体', },
+  { id: 'appli_media', label: '応募媒体', },
   { id: 'prefecture', label: '都道府県',},
-  { id: 'tel', label: '電話番号',},
-  { id: 'mail_address', label: 'メールアドレス',},
-  { id: 'current_work', label: '現在の職業',},
-  { id: 'identification', label: '本人確認書類', },
-  { id: 'web_reserve', label: 'ネット予約',},
-  { id: 'web_entry', label: 'Webエントリー',},
+  { id: 'branch', label: '担当支店' },
+  { id: 'tel1', label: '電話番号',},
+  { id: 'mail_address1', label: 'メールアドレス',},
   { id: 'detail', label: '詳細',},
 ];
 
@@ -39,6 +35,12 @@ const styles = {
   data:{
     color: '#0047a4',
   },
+  ruby:{
+    fontSize: '0.5rem',
+  },
+  fontSmall:{
+    fontSize: '0.8rem',
+  },
   link:{
     color: '#FFFFFF'
   }
@@ -47,17 +49,64 @@ const styles = {
 
 //架空のデータを作成するためのコード
 
+function createData(name_kana, name_kanji, appli_id, birthday, gender, appli_date, appli_media, branch, prefecture, tel1, tel2, mail_address1, mail_address2){
+  return {name_kana, name_kanji, appli_id, birthday, gender, appli_media, appli_date, branch, prefecture, tel1, tel2, mail_address1, mail_address2};
+};
 
-function createData(appli_id, name, birthday, gender, media, prefecture, tel, mail_address, current_work, identification, web_reserve, web_entry, detail) {
-  return { appli_id, name, birthday, gender, media, prefecture, tel, mail_address, current_work, identification, web_reserve, web_entry, detail };
-}
+const firstNameList = [
+  { 'mei_kana' : 'ヒロト', 'mei_kanji' : '大翔', 'gender' : '男性' },
+  { 'mei_kana' : 'タクミ', 'mei_kanji' : '拓海', 'gender' : '男性' },
+  { 'mei_kana' : 'ヒナ', 'mei_kanji' : '陽菜', 'gender' : '女性' },
+  { 'mei_kana' : 'ミウ', 'mei_kanji' : '美羽', 'gender' : '女性' },
+  { 'mei_kana' : 'ユウト', 'mei_kanji' : '優斗', 'gender' : '男性' },
+  { 'mei_kana' : 'ユウマ', 'mei_kanji' : '悠真', 'gender' : '男性' },
+  { 'mei_kana' : 'ココア', 'mei_kanji' : '心愛', 'gender' : '女性' },
+  { 'mei_kana' : 'ユナ', 'mei_kanji' : '結菜', 'gender' : '女性' },
+  { 'mei_kana' : 'レン', 'mei_kanji' : '蓮', 'gender' : '男性' },
+  { 'mei_kana' : 'カイト', 'mei_kanji' : '海斗', 'gender' : '男性' },
+  { 'mei_kana' : 'リン', 'mei_kanji' : '凛', 'gender' : '男性' },
+  { 'mei_kana' : 'ハヤテ', 'mei_kanji' : '颯太', 'gender' : '男性' },
+  { 'mei_kana' : 'シオリ', 'mei_kanji' : '詩織', 'gender' : '女性' },
+  { 'mei_kana' : 'カズハ', 'mei_kanji' : '一葉', 'gender' : '女性' },
+  { 'mei_kana' : 'タイチ', 'mei_kanji' : '太一', 'gender' : '男性' },
+  { 'mei_kana' : 'マオ', 'mei_kanji' : '真央', 'gender' : '女性' },
+  { 'mei_kana' : 'ケイタ', 'mei_kanji' : '慶太', 'gender' : '男性' },
+  { 'mei_kana' : 'ヒトミ', 'mei_kanji' : '瞳', 'gender' : '女性' },
+  { 'mei_kana' : 'ユウ', 'mei_kanji' : '悠', 'gender' : '男性' },
+  { 'mei_kana' : 'ケンタ', 'mei_kanji' : '健太', 'gender' : '男性' },
+];
+
+const lastNameList = [
+  { 'sei_kana' : 'サトウ', 'sei_kanji' : '佐藤' },
+  { 'sei_kana' : 'スズキ', 'sei_kanji' : '鈴木' },
+  { 'sei_kana' : 'タカハシ', 'sei_kanji' : '高橋' },
+  { 'sei_kana' : 'タナカ', 'sei_kanji' : '田中' },
+  { 'sei_kana' : 'ワタナベ', 'sei_kanji' : '渡辺' },
+  { 'sei_kana' : 'イトウ', 'sei_kanji' : '伊藤' },
+  { 'sei_kana' : 'ヤマモト', 'sei_kanji' : '山本' },
+  { 'sei_kana' : 'ナカムラ', 'sei_kanji' : '中村' },
+  { 'sei_kana' : 'コバヤシ', 'sei_kanji' : '小林' },
+  { 'sei_kana' : 'ヨシダ', 'sei_kanji' : '吉田' },
+  { 'sei_kana' : 'ヤマダ', 'sei_kanji' : '山田' },
+  { 'sei_kana' : 'ササキ', 'sei_kanji' : '佐々木' },
+  { 'sei_kana' : 'ヤマグチ', 'sei_kanji' : '山口' },
+  { 'sei_kana' : 'マツモト', 'sei_kanji' : '松本' },
+  { 'sei_kana' : 'イノウエ', 'sei_kanji' : '井上' },
+  { 'sei_kana' : 'キムラ', 'sei_kanji' : '木村' },
+  { 'sei_kana' : 'ハヤシ', 'sei_kanji' : '林' },
+  { 'sei_kana' : 'シミズ', 'sei_kanji' : '清水' },
+  { 'sei_kana' : 'ヤマザキ', 'sei_kanji' : '山崎' },
+];
 
 function generateName() {
-  const firstName = ['大翔', '拓海', '陽菜', '美羽', '優斗', '悠真', '心愛', '結菜', '蓮', '海斗', '凛', '颯太', '詩織', '一葉', '太一', '真央', '慶太', '瞳', '悠', '健太'];
-  const lastName = ['佐藤', '鈴木', '高橋', '田中', '渡辺', '伊藤', '山本', '中村', '小林', '加藤', '吉田', '山田', '佐々木', '山口', '松本', '井上', '木村', '林', '清水', '山崎'];
-  const randomFirstIndex = Math.floor(Math.random() * firstName.length);
-  const randomLastIndex = Math.floor(Math.random() * lastName.length);
-  return lastName[randomLastIndex] + ' ' + firstName[randomFirstIndex];
+  const randomFirstIndex = Math.floor(Math.random() * firstNameList.length);
+  const randomLastIndex = Math.floor(Math.random() * lastNameList.length);
+  const applicant = [
+    { 'name_kana' : lastNameList[randomLastIndex]['sei_kana'] + ' ' + firstNameList[randomFirstIndex]['mei_kana'] },
+    { 'name_kanji' : lastNameList[randomLastIndex]['sei_kanji'] + ' ' + firstNameList[randomFirstIndex]['mei_kanji'] },
+    { 'gender' : firstNameList[randomFirstIndex]['gender'] },
+  ]
+  return applicant;
 }
 
 function generatePhoneNumber() {
@@ -73,47 +122,54 @@ function randomPrefecture() {
   return prefectures[Math.floor(Math.random() * prefectures.length)];
 }
 
-function randomCurrentWork(){
-  const currentWork = ["会社員","フリーター","主婦","学生","無職"];
-  return currentWork[Math.floor(Math.random() * currentWork.length)];
-}
-
-function selectGender(name){
-  
-  if(name.includes('大翔') || name.includes('拓海') || name.includes('優斗') || name.includes('悠真') || name.includes('蓮' )|| name.includes('海斗') || name.includes('颯太') || name.includes('太一') || name.includes('慶太') || name.includes('健太')){
-    return '男性';
-  }else{
-    return '女性';
-  }
-}
-
-
 const mediaList = ["バイトルドットコム","マッハバイト","Airワーク採用管理","マイナビバイト","アルバイトEX"];
 const emailList = ["oubo@ilovex.co.jp", "fake-dummy@test.com"];
+const branchList = ['池袋支店', '新宿支店', 'NC新宿支店'];
+
+function getRandomYmd(fromYmd, toYmd){
+
+  const d1 = new Date(fromYmd);
+  const d2 = new Date(toYmd);
+
+  const c = (d2 - d1) / 86400000;
+  const x = Math.floor(Math.random() * (c+1));
+
+  d1.setDate(d1.getDate() + x);
+
+  //フォーマット整形
+  const year = d1.getFullYear();
+  const month = ("00" + (d1.getMonth()+1)).slice(-2);
+  const day = ("00" + d1.getDate()).slice(-2);
+  const hour = ("00" + d1.getHours()).slice(-2);
+  const minute = ("00" + d1.getMinutes()).slice(-2);
+  return year + "年" + month + "月" + day + "日" + hour + "時" + minute + "分";
+
+}
+
 const rows = [];
+for (let i = 0; i < 1000; i++ ){
+  const applicant = generateName();
 
-
-for (let i = 0; i < 1000; i++) {
-  const appli_id = String(Math.floor(Math.random() * 10000000000)).padStart(10, '0');
-  const name = generateName();
+  const name_kana = applicant[0].name_kana;
+  const name_kanji = applicant[1].name_kanji;
+  const appli_id =  String(Math.floor(Math.random() * 10000000000)).padStart(10, '0');
   const year = Math.floor(Math.random() * (2003 - 1960 + 1)) + 1960;
   const month = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
   const day = Math.floor(Math.random() * (28 - 1 + 1)) + 1;
   const birthday = year + "年" + month + "月" + day + "日";
-  const gender = selectGender(name);
-  const media = mediaList[Math.floor(Math.random() * mediaList.length)];
+  const gender = applicant[2].gender;
+  const appli_media = mediaList[Math.floor(Math.random() * mediaList.length)];
+  const appli_date = getRandomYmd('2010/01/01', '2020/12/31');
+  const branch = branchList[Math.floor(Math.random() * branchList.length)];
   const prefecture = randomPrefecture();
-  const tel = generatePhoneNumber();
-  const mail_address = emailList[Math.floor(Math.random() * emailList.length)];
-  const current_work = randomCurrentWork();
-  const identification = "未対応";
-  const web_reserve = "未対応";
-  const web_entry = "未対応";
-  const detail = <Button variant="contained" size="small"><Link to={`/oubo_detail/` + appli_id} css={styles.link}>詳細</Link></Button>;
-  rows.push(createData(appli_id, name, birthday, gender, media, prefecture, tel, mail_address, current_work, identification, web_reserve, web_entry, detail));
+  const tel1 = generatePhoneNumber();
+  const tel2 = generatePhoneNumber();
+  const mail_address1 = emailList[Math.floor(Math.random() * emailList.length)];
+  const mail_address2 = emailList[Math.floor(Math.random() * emailList.length)];
+  rows.push(createData(name_kana, name_kanji, appli_id, birthday, gender, appli_date, appli_media, prefecture, branch, tel1, tel2, mail_address1, mail_address2));
 }
 
-console.log(rows);
+
 
 //架空のデータを作成するためのコードここまで
 
@@ -131,59 +187,72 @@ const ApplicantsList = () => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Grid container spacing={2} rowSpacing={2} sx={{px:10}}>
-        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-          <TableContainer sx={{maxHeight: '75vh'}}>
-            <Table stickyHeader aria-label="sticky table">
-              <TableHead>
-                <TableRow>
-                  {columns.map((column) => (
-                    <TableCell
-                      key={column.id}
-                      align={column.align}
-                      style={{ minWidth: column.minWidth }}
-                      css={ styles.header }
-                    >
-                      {column.label}
-                    </TableCell>
-                  ))}
+    
+    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <TableContainer sx={{}}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                  css={ styles.header }
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+          {rows
+            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            .map((row, k) => {
+              return (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableCell>{k + 1 +  page * rowsPerPage}</TableCell>
+                  <TableCell css={styles.data}>
+                    <p css={styles.ruby}>{row.name_kana}</p>
+                    <p>{row.name_kanji}</p>
+                  </TableCell>
+                  <TableCell css={styles.data}>{row.appli_id}</TableCell>
+                  <TableCell css={styles.data}>{row.birthday}</TableCell>
+                  <TableCell css={styles.data}>{row.gender}</TableCell>
+                  <TableCell css={styles.data}>
+                    <p css={styles.fontSmall}>{row.appli_date}</p>
+                    <p>{row.appli_media}</p>
+                  </TableCell>
+                  <TableCell css={styles.data}>{row.prefecture}</TableCell>
+                  <TableCell css={styles.data}>{row.branch}</TableCell>
+                  <TableCell css={styles.data}>
+                    <p>{row.tel1}</p>
+                    <p>{row.tel2}</p>
+                  </TableCell>
+                  <TableCell css={styles.data}>
+                    <p>{row.mail_address1}</p>
+                    <p>{row.mail_address2}</p>
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center' }}>
+                    <Button variant="contained" size="small"><Link to={`/oubo_detail/` + row.appli_id} css={styles.link}>詳細</Link></Button>
+                  </TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row) => {
-                    return (
-                      <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                        {columns.map((column) => {
-                          const value = row[column.id];
-                          return (
-                            <TableCell key={column.id} align={column.align} css={styles.data}>
-                              {column.format && typeof value === 'number'
-                                ? column.format(value)
-                                : value}
-                            </TableCell>
-                          );
-                        })}
-                      </TableRow>
-                    );
-                  })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[50, 100]}
-            component="div"
-            count={rows.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Paper>
-      </Grid>
-    </Box>
+                );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[50, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </Paper>
   );
 }
 
