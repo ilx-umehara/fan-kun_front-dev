@@ -8,6 +8,9 @@ import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
+import Modal from '@mui/material/Modal';
+
+import ModalEditEntryInfo from "../modals/ModalEditEntryInfo";
 
 import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
 import StyledMuiTableCell from '../../parts/table/StyledMuiTable/StyledMuiTableCell';
@@ -135,8 +138,12 @@ function ApplicantsEntryInfo() {
     setValue(newValue);
   };
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpenEditInfo = () => setOpen(true);
+  const handleCloseEditInfo = () => setOpen(false);
+  const handleOpenSendRequest = () => setOpen(true);
+  const handleCloseSendRequest = () => setOpen(false);
+
+  console.log(open);
   if(division === 'NC'){
     return (
       <StyledMuiPaper sx={{ height: '73.33333333333333vh' }}>
@@ -153,7 +160,15 @@ function ApplicantsEntryInfo() {
             <TabPanel value={value} index={k}>
               <div css={styles.titleAndEditBtn}>
                 <p className="contentBlockTitle">エントリー情報</p>
-                <Button onClick={handleOpen} variant="contained">編集</Button>
+                <Button onClick={handleOpenEditInfo} variant="contained">編集</Button>
+                <Modal
+                  open={open}
+                  onClose={handleCloseEditInfo}
+                  aria-labelledby="modal-title"
+                  aria-describedby="modal-description"
+                >
+                  <ModalEditEntryInfo/>
+                </Modal>
               </div>
               <TableContainer component={Paper} sx={{ my:3, height: '47.22222222222222vh' }}>
                 <Table sx={{ minWidth: 250 }} aria-label="simple table">
@@ -170,7 +185,7 @@ function ApplicantsEntryInfo() {
             </TabPanel>
             )
           })}
-          <Button onClick={handleOpen} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>
+          {!open ? (<Button onClick={handleOpenSendRequest} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>) : (<div></div>)}
         </Box>
       </StyledMuiPaper>
     );
@@ -188,11 +203,22 @@ function ApplicantsEntryInfo() {
           {tabPanelListsOs.map((panel, j) => {
             return (
               <TabPanel value={value} index={j}>
+
                 <div css={styles.titleAndEditBtn}>
                   <p className="contentBlockTitle">エントリー情報</p>
-                  <Button onClick={handleOpen} variant="contained">編集</Button>
+                  <Button onClick={handleOpenEditInfo} variant="contained">編集</Button>
+                  <Modal
+                    open={open}
+                    onClose={handleCloseEditInfo}
+                    aria-labelledby="modal-title"
+                    aria-describedby="modal-description"
+                  >
+                    <ModalEditEntryInfo/>
+                  </Modal>
                 </div>
-                <TableContainer component={Paper} sx={{ mt:3, height: '47vh' }}>
+
+                
+                <TableContainer component={Paper} sx={{ mt:3, height: '65vh' }}>
                   <Table sx={{ minWidth: 250 }} aria-label="simple table">
                   {panel.map((item) => {
                     return (
@@ -209,7 +235,7 @@ function ApplicantsEntryInfo() {
           })}
           
         </Box>
-        <Button onClick={handleOpen} variant="contained" sx={{mt: 1}}>修正依頼の送信</Button>
+        <Button onClick={handleOpenSendRequest} variant="contained" sx={{mt: 1}}>修正依頼の送信</Button>
       </StyledMuiPaper>
     );
   }

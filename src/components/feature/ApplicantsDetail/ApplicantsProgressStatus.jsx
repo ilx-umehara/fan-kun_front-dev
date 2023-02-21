@@ -36,24 +36,6 @@ function ApplicantStatus() {
               })}
             </StyledSideToSideTable>
           </TableContainer>
-          <div css={styles.statusFigure}>
-            <div>
-              <p>エリア1</p>
-              <p>済</p>
-            </div>
-            <div>
-              <p>エリア2</p>
-              <p>済</p>
-            </div>
-            <div>
-              <p>エリア3</p>
-              <p>未</p>
-            </div>
-            <div>
-              <p>エリア4</p>
-              <p>未</p>
-            </div>
-          </div>
         </div>
       </div>
       </StyledMuiPaper>
@@ -64,12 +46,13 @@ const styles = {
   contentStatus:{
     margin: '15px 40px 30px 40px',
     fontSize:'0.8em',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   statusHeader:{
     display: 'flex',
-    width: '50%',
     height: '50px',
-    margin: '0 auto',
     justifyContent: 'center',
     alignItems: 'center',
     borderBottom: '1px solid #0047a4',

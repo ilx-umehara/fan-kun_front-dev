@@ -3,7 +3,7 @@ import React from "react";
 import StyledMuiPaper from '../../parts/surface/StyledMuiPaper';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
+
 import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
 import TableRow from '@mui/material/TableRow';
@@ -49,25 +49,27 @@ function ApplicantsContactHistory(){
   const handleClose = () => setOpen(false);
 
   return (
-    <StyledMuiPaper sx={{ flexShrink: '0', width: '100%' }}>
-      <div css={styles.titleAndEditBtn}>
-        <p className="contentBlockTitle">コンタクト履歴</p>
-        <Button onClick={handleOpen} variant="contained">新規登録</Button>
-      </div>
-      <TableContainer component={Paper} sx={{ mx:3, my:3, width: 'initial', height: '59.74vh', px:1, py:1 }}>
-        <Table>
-            {contactDatas.map((contactData) => (
-              <TableRow>
-                <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.date}<br/>{contactData.action}</TableCell>
-                <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.comment}</TableCell>
-                <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.status}</TableCell>
-                <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.web_entry}</TableCell>
-                <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.web_reserve}</TableCell>
-                <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.identification}</TableCell>
-              </TableRow>
-            ))}
-        </Table>
-      </TableContainer>
+    <StyledMuiPaper sx={{ width: '100%', pt: 3, pr: 3, pb: 3, pl: 3 }}>
+
+        <div css={styles.titleAndEditBtn}>
+          <p className="contentBlockTitle">コンタクト履歴</p>
+          <Button onClick={handleOpen} variant="contained">新規登録</Button>
+        </div>
+        <TableContainer component={Paper} sx={{ width: 'initial', height: '47vh', px:1, py:1 }}>
+          <Table>
+              {contactDatas.map((contactData) => (
+                <TableRow>
+                  <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.date}<br/>{contactData.action}</TableCell>
+                  <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.comment}</TableCell>
+                  <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.status}</TableCell>
+                  <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.web_entry}</TableCell>
+                  <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.web_reserve}</TableCell>
+                  <TableCell sx={{ fontSize: '0.8rem', padding: '10px 3px', color: '#0047A4', }}>{contactData.identification}</TableCell>
+                </TableRow>
+              ))}
+          </Table>
+        </TableContainer>
+
     </StyledMuiPaper>
   );
 }
@@ -77,6 +79,7 @@ const styles = {
   titleAndEditBtn:{
     display: 'flex',
     justifyContent: 'space-between',
+    marginBottom: '24px',
   },
   tdata:{
     padding: '5px 16px',

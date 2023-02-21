@@ -6,6 +6,7 @@ const StyledMuiTableHead = styled(TableHead)(({ theme }) => ({
   display: 'table-cell',
   padding: '5px 16px',
   fontSize: '0.8rem',
+  verticalAlign: 'baseline',
 }));
 
 export default StyledMuiTableHead;

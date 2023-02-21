@@ -3,6 +3,7 @@ import Login from './components/pages/Login';
 import Top from './components/pages/Top';
 import ApplicantsRegistPage from './components/pages/ApplicantsRegistPage';
 import ApplicantsDetailPage from './components/pages/ApplicantsDetailPage';
+import WebEntry from './components/pages/WebEntryPage';
 
 
 
@@ -13,6 +14,7 @@ function Routing() {
         <Route path="/top" exact element={<Top />} />
         <Route path="/oubo_regist" exact element={<ApplicantsRegistPage />} />
         <Route path="/oubo_detail" exact element={<ApplicantsDetailPage />} />
+        <Route path="/web_entry" exact element={<WebEntry />} />
       </Routes>
   );
 }

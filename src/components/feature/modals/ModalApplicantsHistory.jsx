@@ -47,10 +47,10 @@ const rows = [
 function ModalApplicantsHistory() {
   return (
     <Box css={styles.modal}>
-      <Typography id="modal-modal-title" variant="h6" component="h2">
+      <Typography id="modal-title" variant="h6" component="h2">
         <p className="contentBlockTitle">応募履歴一覧</p>
       </Typography>
-      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+      <Typography id="modal-description" sx={{ mt: 2 }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 700 }} aria-label="customized table">
             <TableHead>

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./templates/Header"
 import Footer from "./templates/Footer"
 import ApplicantsBasicInfo from "../feature/ApplicantsDetail/ApplicantsBasicInfo";
-import ApplicantProgressStatus from "../feature/ApplicantsDetail/ApplicantsProgressStatus";
+// import ApplicantProgressStatus from "../feature/ApplicantsDetail/ApplicantsProgressStatus";
 import ApplicantsEntryInfo from "../feature/ApplicantsDetail/ApplicantsEntryInfo";
 import ApplicantsContactHistory from "../feature/ApplicantsDetail/ApplicantsContactHistory";
 import Box from "@mui/material/Box";
@@ -26,18 +26,22 @@ function ApplicantsDetailPage() {
     <>
       <Header/>
       <Box sx={{ width: '100%' }}>
-        <Grid container spacing={2} rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 2 }} sx={{px:5}}>
-          <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
-              <ApplicantsBasicInfo />
+        <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
+          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+            <Grid container spacing={2}>
+              <Grid item sx={{ width: '100%' }}>
+                <ApplicantsBasicInfo />
+              </Grid>
+              {/* <Grid item sx={{ width: '100%' }}>
+                <ApplicantProgressStatus />
+              </Grid> */}
+              <Grid item sx={{ width: '100%' }}>
+                <ApplicantsContactHistory />
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={7} xl={7} sx={{ display: 'flex' }}>
-              <ApplicantProgressStatus />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
-                <ApplicantsEntryInfo />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={5} xl={5} sx={{ display: 'flex' }}>
-            <ApplicantsContactHistory />
+          <Grid item xs={12} sm={12} md={12} lg={6} xl={6} sx={{ display: 'flex' }}>
+          <ApplicantsEntryInfo />
           </Grid>
         </Grid>
       </Box>
