@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { Link,useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -30,7 +30,19 @@ const columns = [
   { id: 'detail', label: '詳細',},
 ];
 
-
+const styles = {
+  header:{
+    fontWeight: 'bold',
+    color: '#0047a4',
+    textAlign: 'center',
+  },
+  data:{
+    color: '#0047a4',
+  },
+  link:{
+    color: '#FFFFFF'
+  }
+}
 
 
 //架空のデータを作成するためのコード
@@ -121,8 +133,6 @@ const ApplicantsList = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Grid container spacing={2} rowSpacing={2} sx={{px:10}}>
-
-      
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
           <TableContainer sx={{maxHeight: '75vh'}}>
             <Table stickyHeader aria-label="sticky table">
@@ -177,18 +187,6 @@ const ApplicantsList = () => {
   );
 }
 
-const styles = {
-  header:{
-    fontWeight: 'bold',
-    color: '#0047a4',
-    textAlign: 'center',
-  },
-  data:{
-    color: '#0047a4',
-  },
-  link:{
-    color: '#FFFFFF'
-  }
-}
+
 
 export default ApplicantsList;
