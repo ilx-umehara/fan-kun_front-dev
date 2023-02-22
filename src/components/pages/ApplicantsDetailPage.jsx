@@ -27,7 +27,7 @@ const ApplicantsDetailPage = () => {
 
   return (
     <>
-      <Header headerTitle='応募管理画面' />
+      <Header headerTitle='応募者管理画面'/>
       <Box sx={{ width: '100%' }}>
         <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
           <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>

@@ -10,15 +10,24 @@ import PropTypes from 'prop-types';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Grid from "@mui/material/Grid";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
 import Paper from '@mui/material/Paper';
 
 
 import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
+import CheckedProgressStatus from '../../parts/checkbox/CheckedProgressStatus';
+import SelectedDepartment from '../../parts/select/SelectedDepartment';
+import SelectedBranch from '../../parts/select/SelectedBranch';
+import SelectedPrefecture from '../../parts/select/SelectedPrefecture';
+import SelectedAppliMedia from '../../parts/select/SelectedAppliMedia';
+import CheckidIdentificatioDoc from '../../parts/checkbox/CheckidIdentificatioDoc';
+import CustomDatePicker from '../../parts/date/CustomDatePicker';
+import CheckidInterviewMethod from '../../parts/checkbox/CheckidInterviewMethod';
+import CheckedInputWebEntry from '../../parts/checkbox/CheckedInputWebEntry';
 
 const StyledMuiSearchTabs = styled(StyledMuiTabs)(({ theme }) => ({
   '& .MuiTabs-flexContainer': {
@@ -72,7 +81,6 @@ function a11yProps(index) {
 }
 
 const tabHeader = [ 'シンプル検索', '詳細検索' ];
-const simpleSearchItems = [ '未対応', '呼び込み中', '登録完了', 'その他(対面など)', '登録辞退', '対象外' ];
 const label = { inputProps: { 'aria-label': 'mitaiou' } };
 
 const ApplicantsSearch = () =>{
@@ -80,21 +88,14 @@ const ApplicantsSearch = () =>{
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const [department, setDepartment] = React.useState('');
-  const handleChangeDepartment = (event) => {
-    setDepartment(event.target.value);
-  };
+
   const [branch1, setBranch1] = React.useState('');
   const handleChangeBranch1 = (event) => {
     setBranch1(event.target.value);
   };
-  const [branch2, setBranch2] = React.useState('');
-  const handleChangeBranch2 = (event) => {
-    setBranch2(event.target.value);
-  };
   return (
     <>
-      <Box sx={{ width: '25%' }}>
+      <Box sx={{ width: '400px' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <StyledMuiSearchTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
             {tabHeader.map((head, i) => {
@@ -105,90 +106,117 @@ const ApplicantsSearch = () =>{
       </Box>
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
         <TabPanel value={value} index={0}>
-          <div css={styles.searchItem}>
-            <div css={styles.searchItemHeader}>進捗</div>
-            <div>
-              {simpleSearchItems.map((item) => {
-                return <FormControlLabel control={<Checkbox />} label={item} sx={{ mr:4 }}/>
-              })}
-            </div>
-          </div>
+          <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>進捗</div>
+                <CheckedProgressStatus />
+              </div>
+            </Grid>
+          </Grid>
         </TabPanel>
-        
         <TabPanel value={value} index={1}>
-          <div css={styles.searchItem}>
-            <div css={styles.searchItemHeader}>進捗</div>
-            <div>
-              {simpleSearchItems.map((item) => {
-                return <FormControlLabel control={<Checkbox />} label={item} sx={{ mr:4 }}/>
-              })}
-            </div>
-          </div>
-          <div css={styles.searchItem}>
-            <div css={styles.searchItemHeader}>担当支店</div>
-            <div>
-              <p>
-                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                  <InputLabel id="department">事業部</InputLabel>
-                  <Select
-                    labelId="department"
-                    id="department"
-                    value={department}
-                    label="事業部"
-                    onChange={handleChangeDepartment}
-                  >
-                    <MenuItem value={10}>OS</MenuItem>
-                    <MenuItem value={20}>NC</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                  <InputLabel id="branch1">支社</InputLabel>
-                  <Select
-                    labelId="branch1"
-                    id="branch1"
-                    value={branch1}
-                    label="支社"
-                    onChange={handleChangeBranch1}
-                  >
-                    <MenuItem value={10}>OS</MenuItem>
-                    <MenuItem value={20}>NC</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                  <InputLabel id="branch2">支店</InputLabel>
-                  <Select
-                    labelId="branch2"
-                    id="branch2"
-                    value={branch2}
-                    label="支店"
-                    onChange={handleChangeBranch2}
-                  >
-                    <MenuItem value={10}>新宿支店</MenuItem>
-                    <MenuItem value={20}>池袋支店</MenuItem>
-                  </Select>
-                </FormControl>
-              </p>
-            </div>
-          </div>
-          <div css={styles.searchBoxFlex}>
-            <div css={styles.searchItem}>
-              <div css={styles.searchItemHeader}>名前</div>
-              <TextField
-                label="名前"
-                id="name"
-                size="small"
-              />
-            </div>
-            <div css={styles.searchItem}>
-              <div css={styles.searchItemHeader}>都道府県</div>
-              <TextField
-                label="名前"
-                id="name"
-                size="small"
-              />
-            </div>
-          </div>
-
+          <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>進捗</div>
+                <CheckedProgressStatus />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>担当支店</div>
+                  <SelectedDepartment />
+                  <FormControl sx={{ mr: 2, minWidth: 120 }} size="small">
+                    <InputLabel id="branch1">支社</InputLabel>
+                    <Select
+                      labelId="branch1"
+                      id="branch1"
+                      value={branch1}
+                      label="支社"
+                      onChange={handleChangeBranch1}
+                    >
+                      <MenuItem value={10}>OS</MenuItem>
+                      <MenuItem value={20}>NC</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <SelectedBranch />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>名前</div>
+                <TextField label="名前" id="name" size="small" sx={{ width: '240px' }} />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>都道府県</div>
+                <SelectedPrefecture />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>応募者ID</div>
+                <TextField label="応募者ID" id="appli_id" size="small" sx={{ width: '240px' }} />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>電話番号</div>
+                <TextField label="電話番号" id="tel" size="small" sx={{ width: '240px' }}/>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>年齢</div>
+                <TextField label="From" id="age_from" size="small" sx={{ width: '15%' }}/>
+                <span>&emsp;～&emsp;</span>
+                <TextField label="To" id="age_to" size="small" sx={{ width: '15%' }}/>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>メールアドレス</div>
+                <TextField label="メールアドレス" id="mail_address" size="small" sx={{ width: '240px' }}/>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>応募媒体</div>
+                <SelectedAppliMedia />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>本人確認書類</div>
+                <CheckidIdentificatioDoc />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>ネット予約</div>
+                <CustomDatePicker />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
+              <div css={styles.searchItem}>
+                <CheckidInterviewMethod />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={9} xl={9}>
+              <div css={styles.searchItem}>
+              <div css={styles.searchItemHeader}>Webエントリー</div>
+                <CheckedInputWebEntry />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={3} xl={3}>
+              <div css={styles.searchItem}>
+              
+                <Button variant="contained" color="error">検索条件をクリア</Button>
+              </div>
+            </Grid>
+          </Grid>
         </TabPanel>
       </Paper>
     </>
@@ -200,6 +228,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     width: '100%',
+    height: '40px',
     marginBottom: '10px',
   },
   searchItemHeader:{

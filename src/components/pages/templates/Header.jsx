@@ -120,7 +120,8 @@ const Header = props => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">{props.headerTitle}</Typography>
+            <Typography variant="h6" noWrap component="div" sx={{ position: 'absolute', left: '46%' }}>{props.headerTitle}</Typography>
+            <div></div>
           </Toolbar>
         </AppBar>
       </ThemeProvider>
