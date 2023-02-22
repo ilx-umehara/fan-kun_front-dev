@@ -12,6 +12,9 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 
+import Const from '../../../libs/Const';
+
+
 const columns = [
   { id: 'increment', label: 'No', maxWidth: 30 },
   { id: 'name', label: '名前', minWidth: 100 },
@@ -122,7 +125,7 @@ function randomPrefecture() {
   return prefectures[Math.floor(Math.random() * prefectures.length)];
 }
 
-const mediaList = ["バイトルドットコム","マッハバイト","Airワーク採用管理","マイナビバイト","アルバイトEX"];
+const mediaList = Const.APPLI_MEDIA_OPTIONS;
 const emailList = ["oubo@ilovex.co.jp", "fake-dummy@test.com"];
 const branchList = ['池袋支店', '新宿支店', 'NC新宿支店'];
 
