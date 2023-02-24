@@ -15,9 +15,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Paper from '@mui/material/Paper';
 
 
+import StyledMuiPaper from '../../parts/surface/StyledMuiPaper';
 import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
 import CheckedProgressStatus from '../../parts/checkbox/CheckedProgressStatus';
 import SelectedDepartment from '../../parts/select/SelectedDepartment';
@@ -29,65 +29,9 @@ import CustomDatePicker from '../../parts/date/CustomDatePicker';
 import CheckidInterviewMethod from '../../parts/checkbox/CheckidInterviewMethod';
 import CheckedInputWebEntry from '../../parts/checkbox/CheckedInputWebEntry';
 
-const StyledMuiSearchTabs = styled(StyledMuiTabs)(({ theme }) => ({
-  '& .MuiTabs-flexContainer': {
-    flexWrap: 'wrap'
-  },
-  '& .MuiTab-root': {
-    background: '#FFFFFF',
-    borderRadius: '0.25rem',
-    border: '1px solid #0047A4',
-  },
-  '& .Mui-selected': {
-    background: '#0047A4',
-    color: '#FFFFFF !important',
-    borderRadius: '0.25rem',
-    fontWeight: 'bold'
-  },
-
-}));
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ pt: 3, pr: 3, pb: 3, pl: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-const tabHeader = [ 'シンプル検索', '詳細検索' ];
 const label = { inputProps: { 'aria-label': 'mitaiou' } };
 
 const ApplicantsSearch = () =>{
-  const [value, setValue] = React.useState(0);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   const [branch1, setBranch1] = React.useState('');
   const handleChangeBranch1 = (event) => {
@@ -95,27 +39,10 @@ const ApplicantsSearch = () =>{
   };
   return (
     <>
-      <Box sx={{ width: '400px' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <StyledMuiSearchTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
-            {tabHeader.map((head, i) => {
-              return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }}/>
-            })}
-          </StyledMuiSearchTabs>
-        </Box>
-      </Box>
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-        <TabPanel value={value} index={0}>
-          <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <div css={styles.searchItem}>
-                <div css={styles.searchItemHeader}>進捗</div>
-                <CheckedProgressStatus />
-              </div>
-            </Grid>
-          </Grid>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
+
+      <StyledMuiPaper sx={{ width: '100%', overflow: 'hidden', py: 5 }}>
+        
+
           <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <div css={styles.searchItem}>
@@ -217,8 +144,8 @@ const ApplicantsSearch = () =>{
               </div>
             </Grid>
           </Grid>
-        </TabPanel>
-      </Paper>
+        
+      </StyledMuiPaper>
     </>
   )
 }
