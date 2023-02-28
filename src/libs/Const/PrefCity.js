@@ -7,7 +7,7 @@ export default class PrefCity {
       "short": "北海道",
       "kana": "ホッカイドウ",
       "en": "hokkaido",
-      "city":[
+      "cities":[
           {"citycode":"0010001","city":"札幌市中央区"},
           {"citycode":"0010002","city":"札幌市北区"},
           {"citycode":"0010003","city":"札幌市東区"},
@@ -122,7 +122,7 @@ export default class PrefCity {
       "short": "青森",
       "kana": "アオモリケン",
       "en": "aomori",
-      "city":[
+      "cities":[
           {"citycode":"0020001","city":"青森市"},
           {"citycode":"0020002","city":"弘前市"},
           {"citycode":"0020003","city":"八戸市"},
@@ -149,7 +149,7 @@ export default class PrefCity {
       "short": "岩手",
       "kana": "イワテケン",
       "en": "iwate",
-      "city":[
+      "cities":[
           {"citycode":"0030001","city":"盛岡市"},
           {"citycode":"0030002","city":"宮古市"},
           {"citycode":"0030003","city":"大船渡市"},
@@ -182,7 +182,7 @@ export default class PrefCity {
       "short": "宮城",
       "kana": "ミヤギケン",
       "en": "miyagi",
-      "city":[
+      "cities":[
           {"citycode":"0040001","city":"仙台市青葉区"},
           {"citycode":"0040002","city":"仙台市宮城野区"},
           {"citycode":"0040003","city":"仙台市若林区"},
@@ -218,7 +218,7 @@ export default class PrefCity {
       "short": "秋田",
       "kana": "アキタケン",
       "en": "akita",
-      "city":[
+      "cities":[
           {"citycode":"0050001","city":"秋田市"},
           {"citycode":"0050002","city":"能代市"},
           {"citycode":"0050003","city":"横手市"},
@@ -246,7 +246,7 @@ export default class PrefCity {
       "short": "山形",
       "kana": "ヤマガタケン",
       "en": "yamagata",
-      "city":[
+      "cities":[
           {"citycode":"0060001","city":"山形市"},
           {"citycode":"0060002","city":"米沢市"},
           {"citycode":"0060003","city":"鶴岡市"},
@@ -276,7 +276,7 @@ export default class PrefCity {
       "short": "福島",
       "kana": "フクシマケン",
       "en": "fukushima",
-      "city":[
+      "cities":[
           {"citycode":"0070001","city":"福島市"},
           {"citycode":"0070002","city":"会津若松市"},
           {"citycode":"0070003","city":"郡山市"},
@@ -311,7 +311,7 @@ export default class PrefCity {
       "short": "茨城",
       "kana": "イバラキケン",
       "en": "ibaraki",
-      "city":[
+      "cities":[
           {"citycode":"0080001","city":"水戸市"},
           {"citycode":"0080002","city":"日立市"},
           {"citycode":"0080003","city":"土浦市"},
@@ -359,7 +359,7 @@ export default class PrefCity {
       "short": "栃木",
       "kana": "トチギケン",
       "en": "tochigi",
-      "city":[
+      "cities":[
           {"citycode":"0090001","city":"宇都宮市"},
           {"citycode":"0090002","city":"足利市"},
           {"citycode":"0090003","city":"栃木市"},
@@ -387,7 +387,7 @@ export default class PrefCity {
       "short": "群馬",
       "kana": "グンマケン",
       "en": "gunma",
-      "city":[
+      "cities":[
           {"citycode":"0100001","city":"前橋市"},
           {"citycode":"0100002","city":"高崎市"},
           {"citycode":"0100003","city":"桐生市"},
@@ -415,7 +415,7 @@ export default class PrefCity {
       "short": "埼玉",
       "kana": "サイタマケン",
       "en": "saitama",
-      "city":[
+      "cities":[
           {"citycode":"0110001","city":"さいたま市西区"},
           {"citycode":"0110002","city":"さいたま市北区"},
           {"citycode":"0110003","city":"さいたま市大宮区"},
@@ -481,7 +481,7 @@ export default class PrefCity {
       "short": "千葉",
       "kana": "チバケン",
       "en": "chiba",
-      "city":[
+      "cities":[
           {"citycode":"0120001","city":"千葉市中央区"},
           {"citycode":"0120002","city":"千葉市花見川区"},
           {"citycode":"0120003","city":"千葉市稲毛区"},
@@ -539,7 +539,7 @@ export default class PrefCity {
       "short": "東京",
       "kana": "トウキョウト",
       "en": "tokyo",
-      "city":[
+      "cities":[
           {"citycode":"0130001","city":"千代田区"},
           {"citycode":"0130002","city":"中央区"},
           {"citycode":"0130003","city":"港区"},
@@ -603,7 +603,7 @@ export default class PrefCity {
       "short": "神奈川",
       "kana": "カナガワケン",
       "en": "kanagawa",
-      "city":[
+      "cities":[
           {"citycode":"0140001","city":"横浜市鶴見区"},
           {"citycode":"0140002","city":"横浜市神奈川区"},
           {"citycode":"0140003","city":"横浜市西区"},
@@ -662,7 +662,7 @@ export default class PrefCity {
       "short": "新潟",
       "kana": "ニイガタケン",
       "en": "niigata",
-      "city":[
+      "cities":[
           {"citycode":"0150001","city":"新潟市北区"},
           {"citycode":"0150002","city":"新潟市東区"},
           {"citycode":"0150003","city":"新潟市中央区"},
@@ -707,7 +707,7 @@ export default class PrefCity {
       "short": "富山",
       "kana": "トヤマケン",
       "en": "toyama",
-      "city":[
+      "cities":[
           {"citycode":"0160001","city":"富山市"},
           {"citycode":"0160002","city":"高岡市"},
           {"citycode":"0160003","city":"魚津市"},
@@ -728,7 +728,7 @@ export default class PrefCity {
       "short": "石川",
       "kana": "イシカワケン",
       "en": "ishikawa",
-      "city":[
+      "cities":[
           {"citycode":"0170001","city":"金沢市"},
           {"citycode":"0170002","city":"七尾市"},
           {"citycode":"0170003","city":"小松市"},
@@ -753,7 +753,7 @@ export default class PrefCity {
       "short": "福井",
       "kana": "フクイケン",
       "en": "fukui",
-      "city":[
+      "cities":[
           {"citycode":"0180001","city":"福井市"},
           {"citycode":"0180002","city":"敦賀市"},
           {"citycode":"0180003","city":"小浜市"},
@@ -778,7 +778,7 @@ export default class PrefCity {
       "short": "山梨",
       "kana": "ヤマナシケン",
       "en": "yamanashi",
-      "city":[
+      "cities":[
           {"citycode":"0190001","city":"甲府市"},
           {"citycode":"0190002","city":"富士吉田市"},
           {"citycode":"0190003","city":"都留市"},
@@ -805,7 +805,7 @@ export default class PrefCity {
       "short": "長野",
       "kana": "ナガノケン",
       "en": "nagano",
-      "city":[
+      "cities":[
           {"citycode":"0200001","city":"長野市"},
           {"citycode":"0200002","city":"松本市"},
           {"citycode":"0200003","city":"上田市"},
@@ -847,7 +847,7 @@ export default class PrefCity {
       "short": "岐阜",
       "kana": "ギフケン",
       "en": "gifu",
-      "city":[
+      "cities":[
           {"citycode":"0210001","city":"岐阜市"},
           {"citycode":"0210002","city":"大垣市"},
           {"citycode":"0210003","city":"高山市"},
@@ -886,7 +886,7 @@ export default class PrefCity {
       "short": "静岡",
       "kana": "シズオカケン",
       "en": "shizuoka",
-      "city":[
+      "cities":[
           {"citycode":"0220001","city":"静岡市葵区"},
           {"citycode":"0220002","city":"静岡市駿河区"},
           {"citycode":"0220003","city":"静岡市清水区"},
@@ -931,7 +931,7 @@ export default class PrefCity {
       "short": "愛知",
       "kana": "アイチケン",
       "en": "aichi",
-      "city":[
+      "cities":[
           {"citycode":"0230001","city":"名古屋市千種区"},
           {"citycode":"0230002","city":"名古屋市東区"},
           {"citycode":"0230003","city":"名古屋市北区"},
@@ -1000,7 +1000,7 @@ export default class PrefCity {
       "short": "三重",
       "kana": "ミエケン",
       "en": "mie",
-      "city":[
+      "cities":[
           {"citycode":"0240001","city":"津市"},
           {"citycode":"0240002","city":"四日市市"},
           {"citycode":"0240003","city":"伊勢市"},
@@ -1030,7 +1030,7 @@ export default class PrefCity {
       "short": "滋賀",
       "kana": "シガケン",
       "en": "shiga",
-      "city":[
+      "cities":[
           {"citycode":"0250001","city":"大津市"},
           {"citycode":"0250002","city":"彦根市"},
           {"citycode":"0250003","city":"長浜市"},
@@ -1055,7 +1055,7 @@ export default class PrefCity {
       "short": "京都",
       "kana": "キョウトフ",
       "en": "kyoto",
-      "city":[
+      "cities":[
           {"citycode":"0260001","city":"京都市北区"},
           {"citycode":"0260002","city":"京都市上京区"},
           {"citycode":"0260003","city":"京都市左京区"},
@@ -1095,7 +1095,7 @@ export default class PrefCity {
       "short": "大阪",
       "kana": "オオサカフ",
       "en": "osaka",
-      "city":[
+      "cities":[
           {"citycode":"0270001","city":"大阪市都島区"},
           {"citycode":"0270002","city":"大阪市福島区"},
           {"citycode":"0270003","city":"大阪市此花区"},
@@ -1171,7 +1171,7 @@ export default class PrefCity {
       "short": "兵庫",
       "kana": "ヒョウゴケン",
       "en": "hyogo",
-      "city":[
+      "cities":[
           {"citycode":"0280001","city":"神戸市東灘区"},
           {"citycode":"0280002","city":"神戸市灘区"},
           {"citycode":"0280003","city":"神戸市兵庫区"},
@@ -1225,7 +1225,7 @@ export default class PrefCity {
       "short": "奈良",
       "kana": "ナラケン",
       "en": "nara",
-      "city":[
+      "cities":[
           {"citycode":"0290001","city":"奈良市"},
           {"citycode":"0290002","city":"大和高田市"},
           {"citycode":"0290003","city":"大和郡山市"},
@@ -1253,7 +1253,7 @@ export default class PrefCity {
       "short": "和歌山",
       "kana": "ワカヤマケン",
       "en": "wakayama",
-      "city":[
+      "cities":[
           {"citycode":"0300001","city":"和歌山市"},
           {"citycode":"0300002","city":"海南市"},
           {"citycode":"0300003","city":"橋本市"},
@@ -1277,7 +1277,7 @@ export default class PrefCity {
       "short": "鳥取",
       "kana": "トットリケン",
       "en": "tottori",
-      "city":[
+      "cities":[
           {"citycode":"0310001","city":"鳥取市"},
           {"citycode":"0310002","city":"米子市"},
           {"citycode":"0310003","city":"倉吉市"},
@@ -1295,7 +1295,7 @@ export default class PrefCity {
       "short": "島根",
       "kana": "シマネケン",
       "en": "shimane",
-      "city":[
+      "cities":[
           {"citycode":"0320001","city":"松江市"},
           {"citycode":"0320002","city":"浜田市"},
           {"citycode":"0320003","city":"出雲市"},
@@ -1317,7 +1317,7 @@ export default class PrefCity {
       "short": "岡山",
       "kana": "オカヤマケン",
       "en": "okayama",
-      "city":[
+      "cities":[
           {"citycode":"0330001","city":"岡山市北区"},
           {"citycode":"0330002","city":"岡山市中区"},
           {"citycode":"0330003","city":"岡山市東区"},
@@ -1353,7 +1353,7 @@ export default class PrefCity {
       "short": "広島",
       "kana": "ヒロシマケン",
       "en": "hiroshima",
-      "city":[
+      "cities":[
           {"citycode":"0340001","city":"広島市中区"},
           {"citycode":"0340002","city":"広島市東区"},
           {"citycode":"0340003","city":"広島市南区"},
@@ -1388,7 +1388,7 @@ export default class PrefCity {
       "short": "山口",
       "kana": "ヤマグチケン",
       "en": "yamaguchi",
-      "city":[
+      "cities":[
           {"citycode":"0350001","city":"下関市"},
           {"citycode":"0350002","city":"宇部市"},
           {"citycode":"0350003","city":"山口市"},
@@ -1414,7 +1414,7 @@ export default class PrefCity {
       "short": "徳島",
       "kana": "トクシマケン",
       "en": "tokushima",
-      "city":[
+      "cities":[
           {"citycode":"0360001","city":"徳島市"},
           {"citycode":"0360002","city":"鳴門市"},
           {"citycode":"0360003","city":"小松島市"},
@@ -1439,7 +1439,7 @@ export default class PrefCity {
       "short": "香川",
       "kana": "カガワケン",
       "en": "kagawa",
-      "city":[
+      "cities":[
           {"citycode":"0370001","city":"高松市"},
           {"citycode":"0370002","city":"丸亀市"},
           {"citycode":"0370003","city":"坂出市"},
@@ -1461,7 +1461,7 @@ export default class PrefCity {
       "short": "愛媛",
       "kana": "エヒメケン",
       "en": "ehime",
-      "city":[
+      "cities":[
           {"citycode":"0380001","city":"松山市"},
           {"citycode":"0380002","city":"今治市"},
           {"citycode":"0380003","city":"宇和島市"},
@@ -1488,7 +1488,7 @@ export default class PrefCity {
       "short": "高知",
       "kana": "コウチケン",
       "en": "kochi",
-      "city":[
+      "cities":[
           {"citycode":"0390001","city":"高知市"},
           {"citycode":"0390002","city":"室戸市"},
           {"citycode":"0390003","city":"安芸市"},
@@ -1514,7 +1514,7 @@ export default class PrefCity {
       "short": "福岡",
       "kana": "フクオカケン",
       "en": "fukuoka",
-      "city":[
+      "cities":[
           {"citycode":"0400001","city":"北九州市門司区"},
           {"citycode":"0400002","city":"北九州市若松区"},
           {"citycode":"0400003","city":"北九州市戸畑区"},
@@ -1575,7 +1575,7 @@ export default class PrefCity {
       "short": "佐賀",
       "kana": "サガケン",
       "en": "saga",
-      "city":[
+      "cities":[
           {"citycode":"0410001","city":"佐賀市"},
           {"citycode":"0410002","city":"唐津市"},
           {"citycode":"0410003","city":"鳥栖市"},
@@ -1600,7 +1600,7 @@ export default class PrefCity {
       "short": "長崎",
       "kana": "ナガサキケン",
       "en": "nagasaki",
-      "city":[
+      "cities":[
           {"citycode":"0420001","city":"長崎市"},
           {"citycode":"0420002","city":"佐世保市"},
           {"citycode":"0420003","city":"島原市"},
@@ -1626,7 +1626,7 @@ export default class PrefCity {
       "short": "熊本",
       "kana": "クマモトケン",
       "en": "kumamoto",
-      "city":[
+      "cities":[
           {"citycode":"0430001","city":"熊本市中央区"},
           {"citycode":"0430002","city":"熊本市東区"},
           {"citycode":"0430003","city":"熊本市西区"},
@@ -1662,7 +1662,7 @@ export default class PrefCity {
       "short": "大分",
       "kana": "オオイタケン",
       "en": "oita",
-      "city":[
+      "cities":[
           {"citycode":"0440001","city":"大分市"},
           {"citycode":"0440002","city":"別府市"},
           {"citycode":"0440003","city":"中津市"},
@@ -1687,7 +1687,7 @@ export default class PrefCity {
       "short": "宮崎",
       "kana": "ミヤザキケン",
       "en": "miyazaki",
-      "city":[
+      "cities":[
           {"citycode":"0450001","city":"宮崎市"},
           {"citycode":"0450002","city":"都城市"},
           {"citycode":"0450003","city":"延岡市"},
@@ -1711,7 +1711,7 @@ export default class PrefCity {
       "short": "鹿児島",
       "kana": "カゴシマケン",
       "en": "kagoshima",
-      "city":[
+      "cities":[
           {"citycode":"0460001","city":"鹿児島市"},
           {"citycode":"0460002","city":"鹿屋市"},
           {"citycode":"0460003","city":"枕崎市"},
@@ -1747,7 +1747,7 @@ export default class PrefCity {
       "short": "沖縄",
       "kana": "オキナワケン",
       "en": "okinawa",
-      "city":[
+      "cities":[
           {"citycode":"0470001","city":"那覇市"},
           {"citycode":"0470002","city":"宜野湾市"},
           {"citycode":"0470003","city":"石垣市"},

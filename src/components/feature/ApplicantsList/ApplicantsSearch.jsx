@@ -40,7 +40,7 @@ const ApplicantsSearch = () =>{
   return (
     <>
 
-      <StyledMuiPaper sx={{ width: '100%', overflow: 'hidden', py: 5 }}>
+      <StyledMuiPaper sx={{ width: '100%', overflow: 'hidden', py: 5, textAlign: 'left' }}>
         
 
           <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
@@ -160,7 +160,8 @@ const styles = {
   },
   searchItemHeader:{
     width: '120px',
-    marginRight: '30px'
+    marginRight: '30px',
+    textAlign: 'left',
   },
   searchBoxFlex:{
     display: 'flex',

@@ -79,12 +79,12 @@ function DummyAppliData() {
     const numOfPrefectures = ('00' + Math.floor( Math.random() * 47 + 1)).slice(-2);
 
     const randomPref = prefectures[0][0][numOfPrefectures];
-    const numOfCity = Math.floor( Math.random() * (randomPref["city"].length) );
+    const numOfCity = Math.floor( Math.random() * (randomPref["cities"].length) );
 
 
     const address = {
       prefecture: randomPref["name"],
-      city: randomPref["city"][numOfCity]["city"],
+      city: randomPref["cities"][numOfCity]["city"],
     }
 
     return address;

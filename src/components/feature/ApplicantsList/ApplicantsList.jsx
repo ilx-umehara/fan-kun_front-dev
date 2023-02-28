@@ -124,9 +124,6 @@ function ApplicantsList(){
     };
   }, [scrollDistance.top]);
 
-
-  console.log(scrollDistance.top);
-
   return (
     
     <Paper sx={{ width: '100%', overflow: 'auto' }}>
