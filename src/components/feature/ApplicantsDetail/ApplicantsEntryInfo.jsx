@@ -9,14 +9,22 @@ import Table from '@mui/material/Table';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
 import Modal from '@mui/material/Modal';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 import ModalEditEntryInfo from "../modals/ModalEditEntryInfo";
+
+// import CompletedLightGreen from "../../../assets/images/completed_light_green.svg";
+// import Incomplete from "../../../assets/images/incomplete_red.svg";
+
 
 import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
 import StyledMuiTableCell from '../../parts/table/StyledMuiTable/StyledMuiTableCell';
 import StyledMuiTableHead from '../../parts/table/StyledMuiTable/StyledMuiTableHead';
 import StyledMuiTableRow from '../../parts/table/StyledMuiTable/StyledMuiTableRow';
 import StyledMuiPaper from '../../parts/surface//StyledMuiPaper';
+import CheckCircle from '../../parts/icons/CheckCircle';
+import Incomplete from "../../parts/icons/Incomplete";
 
 const tableDataListsBasicInfo = [
   { 'thead': '姓(漢字)', 'tdata': '応募' },
@@ -91,12 +99,27 @@ const tableDataListsOS2 = [
   { 'thead': '','tdata': '勤務地：' },
 ];
 
-const tabHeaderNc = [ '基本情報', '希望条件' ];
-const tabHeaderOs = [ '基本情報', '希望条件', 'OAスキル', '経験職種', '資格', '職歴/最終学歴', '社内用', '緊急連絡先', '給与口座', '社保・雇用', '在留カード' ];
+const tabHeaderNc = [
+  { 'tabTitle': '基本情報', 'progress': '済'},
+  { 'tabTitle': '希望条件', 'progress': null}
+];
+
+const tabHeaderOs = [
+  {'tabTitle': '希望条件', 'progress': '済'},
+  {'tabTitle': 'OAスキル', 'progress': null},
+  {'tabTitle': '経験職種', 'progress': null},
+  {'tabTitle': '資格', 'progress': null},
+  {'tabTitle': '職歴/学歴', 'progress': null},
+  {'tabTitle': '社内用', 'progress': null},
+  {'tabTitle': '緊急連絡先', 'progress': '済'},
+  {'tabTitle': '給与口座', 'progress': '済'},
+  {'tabTitle': '社保・雇用', 'progress': '未'},
+  {'tabTitle': '在留カード', 'progress': '未'},
+];
 
 const tabPanelListsNc = [ tableDataListsBasicInfo, tableDataListsNC2 ];
 const tabPanelListsOs = [ tableDataListsBasicInfo, tableDataListsOS2 ];
-
+console.log(tabHeaderOs);
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -143,7 +166,10 @@ function ApplicantsEntryInfo() {
   const handleOpenSendRequest = () => setOpen(true);
   const handleCloseSendRequest = () => setOpen(false);
 
-  console.log(open);
+  const fillIn = 'a';
+  
+
+
   if(division === 'NC'){
     return (
       <StyledMuiPaper sx={{ height: '73.33333333333333vh' }}>
@@ -151,7 +177,7 @@ function ApplicantsEntryInfo() {
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
               {tabHeaderNc.map((head, i) => {
-                return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }}/>
+                return <Tab label={head.tabTitle} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }} icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
               })}
             </StyledMuiTabs>
           </Box>
@@ -196,14 +222,13 @@ function ApplicantsEntryInfo() {
           <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
               {tabHeaderOs.map((head, i) => {
-                return <Tab label={head} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '16.66%' }}/>
+                return <Tab label={head.tabTitle} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '16.66%' }} iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
               })}
             </StyledMuiTabs>
           </Box>
           {tabPanelListsOs.map((panel, j) => {
             return (
               <TabPanel value={value} index={j}>
-
                 <div css={styles.titleAndEditBtn}>
                   <p className="contentBlockTitle">エントリー情報</p>
                   <Button onClick={handleOpenEditInfo} variant="contained">編集</Button>

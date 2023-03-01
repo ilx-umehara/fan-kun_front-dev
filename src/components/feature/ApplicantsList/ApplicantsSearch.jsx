@@ -82,16 +82,10 @@ const ApplicantsSearch = () =>{
                 <SelectedPrefecture />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>応募者ID</div>
                 <TextField label="応募者ID" id="appli_id" size="small" sx={{ width: '240px' }} />
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
-              <div css={styles.searchItem}>
-                <div css={styles.searchItemHeader}>電話番号</div>
-                <TextField label="電話番号" id="tel" size="small" sx={{ width: '240px' }}/>
               </div>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
@@ -102,18 +96,39 @@ const ApplicantsSearch = () =>{
                 <TextField label="To" id="age_to" size="small" sx={{ width: '15%' }}/>
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>電話番号</div>
+                <TextField label="電話番号" id="tel" size="small" sx={{ width: '240px' }}/>
+              </div>
+            </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>メールアドレス</div>
                 <TextField label="メールアドレス" id="mail_address" size="small" sx={{ width: '240px' }}/>
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>応募媒体</div>
                 <SelectedAppliMedia />
               </div>
             </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>応募日時</div>
+                <CustomDatePicker />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>求人タイトル</div>
+                <TextField label="求人タイトル" id="job_title" size="small" sx={{ width: '240px' }} />
+              </div>
+            </Grid>
+
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>本人確認書類</div>

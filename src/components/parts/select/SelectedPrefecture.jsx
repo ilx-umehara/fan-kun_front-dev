@@ -106,11 +106,9 @@ export default function SelectedPrefecture() {
     setSelectedPref(event.target.value);
     // setCity();
   };
-  const [personName, setPersonName] = React.useState([]);
+
   const [selectedCity, setSelectedCity] = React.useState([]);
-  // const handleChangeCity = (event) => {
-  //   setCity(event.target.value);
-  // };
+
   const handleChangeSelectedCity = (event) => {
     const {
       target: { value },
@@ -120,15 +118,7 @@ export default function SelectedPrefecture() {
       typeof value === 'string' ? value.split(',') : value,
     );
   };
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
+
 
   const prefOptions = prefAndCitiesLists.map((pref, i) => (
     <MenuItem key={i} value={pref.prefecture}>{pref.prefecture}</MenuItem>
