@@ -30,8 +30,9 @@ const tabHeaderOs = [
   {'tabTitle': '基本情報', 'progress': '済'},
   {'tabTitle': '希望条件', 'progress': '済'},
   {'tabTitle': 'OAスキル', 'progress': null},
-  {'tabTitle': '経験職種', 'progress': null},
   {'tabTitle': '資格', 'progress': null},
+  {'tabTitle': '経験職種', 'progress': null},
+
   {'tabTitle': '職歴/学歴', 'progress': null},
   {'tabTitle': '社内用', 'progress': null},
   {'tabTitle': '緊急連絡先', 'progress': '済'},
@@ -100,7 +101,7 @@ function ApplicantsEntryInfo() {
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
               {tabHeaderNc.map((head, i) => {
-                return <Tab label={head.tabTitle} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '50%' }} iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
+                return <Tab label={head.tabTitle} {...a11yProps({i})} css={ styles.MuiTabNc } iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
               })}
             </StyledMuiTabs>
           </Box>
@@ -145,7 +146,7 @@ function ApplicantsEntryInfo() {
           <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
               {tabHeaderOs.map((head, i) => {
-                return <Tab label={head.tabTitle} {...a11yProps({i})} sx={{ maxWidth: 'initial', minWidth: 'initial', width: '16.66%' }} iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
+                return <Tab label={head.tabTitle} {...a11yProps({i})} css={ styles.MuiTabOs } iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
               })}
             </StyledMuiTabs>
           </Box>
@@ -200,6 +201,18 @@ const styles = {
   btnArea:{
     background: 'red',
     padding: '1% 0',
+  },
+  MuiTabNc:{
+    maxWidth: 'initial',
+    minWidth: 'initial',
+    width: '50%',
+    minHeight: '45px',
+  },
+  MuiTabOs:{
+    maxWidth: 'initial',
+    minWidth: 'initial',
+    width: '16.66%',
+    minHeight: '45px',
   }
 }
 

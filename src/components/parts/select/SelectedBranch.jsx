@@ -4,6 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import Const from '../../../libs/Const';
 
 const SelectedBranch = () => {
   const [branch, setBranch] = React.useState('');
@@ -21,8 +22,11 @@ const SelectedBranch = () => {
       label="支店"
       onChange={handleChangeBranch}
     >
-      <MenuItem value={10}>新宿支店</MenuItem>
-      <MenuItem value={20}>池袋支店</MenuItem>
+      {Const.BRANCH_OPTIONS.map((option) => {
+          return (
+            <MenuItem value={option}>{option}</MenuItem>
+          )})
+      }
     </Select>
   </FormControl>
   )

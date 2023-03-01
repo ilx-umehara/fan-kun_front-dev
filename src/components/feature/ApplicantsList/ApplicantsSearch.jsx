@@ -50,7 +50,27 @@ const ApplicantsSearch = () =>{
                 <CheckedProgressStatus />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <div css={styles.searchItem}>
+                <div css={styles.searchItemHeader}>応募支店</div>
+                  <SelectedDepartment />
+                  <FormControl sx={{ mr: 2, minWidth: 120 }} size="small">
+                    <InputLabel id="branch1">支社</InputLabel>
+                    <Select
+                      labelId="branch1"
+                      id="branch1"
+                      value={branch1}
+                      label="支社"
+                      onChange={handleChangeBranch1}
+                    >
+                      <MenuItem value={10}>OS</MenuItem>
+                      <MenuItem value={20}>NC</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <SelectedBranch />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>担当支店</div>
                   <SelectedDepartment />
@@ -118,7 +138,7 @@ const ApplicantsSearch = () =>{
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
               <div css={styles.searchItem}>
-                <div css={styles.searchItemHeader}>応募日時</div>
+                <div css={styles.searchItemHeader}>応募日(Alive)</div>
                 <CustomDatePicker />
               </div>
             </Grid>
@@ -173,7 +193,7 @@ const ApplicantsSearch = () =>{
               </Grid>
             </Grid>
           </Grid>
-        
+          
       </StyledMuiPaper>
     </>
   )
