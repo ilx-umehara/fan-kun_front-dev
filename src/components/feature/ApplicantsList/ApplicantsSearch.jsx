@@ -152,11 +152,25 @@ const ApplicantsSearch = () =>{
                 <CheckedInputWebEntry />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={3} xl={3}>
-              <div css={styles.searchItem}>
-              
-                <Button variant="contained" color="error">検索条件をクリア</Button>
-              </div>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+                  <div css={styles.downloadBtn}>
+                    
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+                  <div css={styles.searchBtn}>
+                    <Button variant="contained" color="success" size="large" sx={{ width: '30%', height: '60px' }}>検索</Button>
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+                  <div css={styles.clearBtn}>
+                    <Button variant="contained" color="primary" sx={{ ml: 7 }}>CSVダウンロード</Button>
+                    <Button variant="contained" color="error" sx={{ ml: 7 }}>検索条件をクリア</Button>
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         
@@ -168,6 +182,30 @@ const ApplicantsSearch = () =>{
 const styles = {
   searchItem:{
     display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    height: '40px',
+    marginBottom: '10px',
+  },
+  downloadBtn:{
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '100%',
+    height: '40px',
+    marginBottom: '10px',
+  },
+  searchBtn:{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '40px',
+    marginBottom: '10px',
+  },
+  clearBtn:{
+    display: 'flex',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     width: '100%',
     height: '40px',
