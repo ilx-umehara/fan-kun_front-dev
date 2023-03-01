@@ -15,16 +15,16 @@ import DummyAppliData from '../../../libs/Const/DummyAppliData';
 
 
 const columns = [
-  { id: 'increment', label: 'No', width: '88px' },
+  { id: 'increment', label: 'No', width: '53px' },
   { id: 'name', label: '名前', width: '175px' },
-  { id: 'appli_id', label: '応募者ID', width: '175px' },
-  { id: 'birthday', label: '生年月日', width: '263px' },
-  { id: 'gender', label: '性別', width: '88px' },
-  // { id: 'appli_media', label: '応募媒体', width: '10%' },
+  { id: 'appli_id', label: '応募者ID', width: '158px' },
+  { id: 'birthday', label: '生年月日', width: '175px' },
+  { id: 'gender', label: '性別', width: '70px' },
+  { id: 'appli_media', label: 'スタッフコード', width: '158px' },
   { id: 'prefecture', label: '都道府県', width: '175px' },
   { id: 'branch', label: '担当支店', width: '175px' },
-  { id: 'tel1', label: '電話番号', width: '263px' },
-  { id: 'mail_address1', label: 'メールアドレス', width: '263px' },
+  { id: 'tel1', label: '電話番号', width: '262px' },
+  { id: 'mail_address1', label: 'メールアドレス', width: '262px' },
   { id: 'detail', label: '詳細', width: '96px' },
 ];
 
@@ -149,21 +149,21 @@ function ApplicantsList(){
             .map((row, k) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  <TableCell sx={{ width: '5%' }}>{k + 1 +  page * rowsPerPage}</TableCell>
+                  <TableCell sx={{ width: '3%' }}>{k + 1 +  page * rowsPerPage}</TableCell>
                   <TableCell css={styles.data} sx={{ width: '10%' }}>
                     <p css={styles.ruby}>{row.name_kana}</p>
                     <p>{row.name_kanji}</p>
                   </TableCell>
-                  <TableCell css={styles.data} sx={{ width: '10%' }}>{row.appli_id}</TableCell>
-                  <TableCell css={styles.data} sx={{ width: '15%' }}>
+                  <TableCell css={styles.data} sx={{ width: '9%' }}>{row.appli_id}</TableCell>
+                  <TableCell css={styles.data} sx={{ width: '10%' }}>
                     <p>{row.birthday}</p>
                     <p>{row.age}</p>
                     </TableCell>
-                  <TableCell css={styles.data} sx={{ width: '5%' }}>{row.gender}</TableCell>
-                  {/* <TableCell css={styles.data}>
-                    <p css={styles.fontSmall}>{row.appli_date}</p>
-                    <p>{row.appli_media}</p>
-                  </TableCell> */}
+                  <TableCell css={styles.data} sx={{ width: '4%' }}>{row.gender}</TableCell>
+                  <TableCell css={styles.data} sx={{ width: '9%' }}>
+                    <Link to={`/oubo_detail/` + row.appli_id}>{row.staffcode}</Link>
+                  </TableCell>
+
                   <TableCell css={styles.data} sx={{ width: '10%' }}>{row.prefecture}</TableCell>
                   <TableCell css={styles.data} sx={{ width: '10%' }}>{row.branch}</TableCell>
                   <TableCell css={styles.data} sx={{ width: '15%' }}>

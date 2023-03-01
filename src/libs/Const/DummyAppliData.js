@@ -4,8 +4,8 @@ import PrefCity from './PrefCity';
 function DummyAppliData() {
   //架空のデータを作成するためのコード
 
-  function createData(name_kana, name_kanji, appli_id, birthday, age, gender, appli_date, appli_media, prefecture, branch, tel1, tel2, mail_address1, mail_address2){
-    return {name_kana, name_kanji, appli_id, birthday, age, gender, appli_media, appli_date, prefecture, branch, tel1, tel2, mail_address1, mail_address2};
+  function createData(name_kana, name_kanji, appli_id, birthday, age, gender, staffcode, appli_date, appli_media, prefecture, branch, tel1, tel2, mail_address1, mail_address2){
+    return {name_kana, name_kanji, appli_id, birthday, age, gender, staffcode, appli_media, appli_date, prefecture, branch, tel1, tel2, mail_address1, mail_address2};
   };
 
   const firstNameList = [
@@ -159,6 +159,7 @@ function DummyAppliData() {
     const birthday = birthdayAndAge.date;
     const age = birthdayAndAge.age;
     const gender = applicant[2].gender;
+    const staffcode =  String(Math.floor(Math.random() * 10000000000)).padStart(10, '0');
     const appli_media = mediaList[Math.floor(Math.random() * mediaList.length)];
     const appli_date = getRandomYmd('2010/01/01', '2020/12/31');
     const prefecture = address.prefecture + address.city;
@@ -167,7 +168,7 @@ function DummyAppliData() {
     const tel2 = generatePhoneNumber();
     const mail_address1 = emailList[Math.floor(Math.random() * emailList.length)];
     const mail_address2 = emailList[Math.floor(Math.random() * emailList.length)];
-    rows.push(createData(name_kana, name_kanji, appli_id, birthday, age, gender, appli_date, appli_media, prefecture, branch, tel1, tel2, mail_address1, mail_address2));
+    rows.push(createData(name_kana, name_kanji, appli_id, birthday, age, gender, staffcode, appli_date, appli_media, prefecture, branch, tel1, tel2, mail_address1, mail_address2));
   }
 
 

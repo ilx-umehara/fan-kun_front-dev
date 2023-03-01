@@ -50,7 +50,7 @@ const ApplicantsSearch = () =>{
                 <CheckedProgressStatus />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>応募支店</div>
                   <SelectedDepartment />
@@ -70,7 +70,7 @@ const ApplicantsSearch = () =>{
                   <SelectedBranch />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
+            <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>担当支店</div>
                   <SelectedDepartment />
@@ -90,13 +90,13 @@ const ApplicantsSearch = () =>{
                   <SelectedBranch />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>名前</div>
                 <TextField label="名前" id="name" size="small" sx={{ width: '240px' }} />
               </div>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
+            <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>都道府県</div>
                 <SelectedPrefecture />
