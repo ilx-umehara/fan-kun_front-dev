@@ -6,6 +6,7 @@ import WebEntryBasicInfo from '../feature/WebEntry/WebEntryBasicInfo';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
+
 const WebEntryPage = () => {
   return (
     <>
@@ -13,6 +14,8 @@ const WebEntryPage = () => {
         <Grid container spacing={2} rowSpacing={2} sx={{px:5, display: 'flex', justifyContent: 'center'}}>
           <WebEntryBasicInfo/>
         </Grid>
+
+
       </Box>
       <Footer/>
     </>

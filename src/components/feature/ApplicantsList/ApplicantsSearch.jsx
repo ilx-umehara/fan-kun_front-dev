@@ -22,7 +22,7 @@ import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
 import CheckedProgressStatus from '../../parts/checkbox/CheckedProgressStatus';
 import SelectedDepartment from '../../parts/select/SelectedDepartment';
 import SelectedBranch from '../../parts/select/SelectedBranch';
-import SelectedPrefecture from '../../parts/select/SelectedPrefecture';
+import SelectedPrefectureAndCity from '../../parts/select/SelectedPrefectureAndCity';
 import SelectedAppliMedia from '../../parts/select/SelectedAppliMedia';
 import CheckidIdentificatioDoc from '../../parts/checkbox/CheckidIdentificatioDoc';
 import CustomDatePicker from '../../parts/date/CustomDatePicker';
@@ -99,7 +99,7 @@ const ApplicantsSearch = () =>{
             <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
               <div css={styles.searchItem}>
                 <div css={styles.searchItemHeader}>都道府県</div>
-                <SelectedPrefecture />
+                <SelectedPrefectureAndCity />
               </div>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>

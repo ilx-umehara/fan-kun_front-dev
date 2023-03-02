@@ -11,8 +11,8 @@ import FormLabel from '@mui/material/FormLabel';
 function RowRadioButtonsGroup() {
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-      <div css={styles.searchItem}>
-        <div css={styles.searchItemHeader}>性別</div>
+      <div css={styles.inputItem}>
+        <div css={styles.inputItemHeader}>性別</div>
         <FormControl>
           <RadioGroup
             row
@@ -30,16 +30,16 @@ function RowRadioButtonsGroup() {
 }
 
 const styles = {
-  searchItem:{
-    display: 'flex',
-    alignItems: 'center',
+  inputItem:{
     width: '100%',
-    height: '40px',
-    marginBottom: '10px',
+    marginBottom: '20px',
   },
-  searchItemHeader:{
-    width: '200px',
+  inputItemHeader:{
+    fontWeight: 'bold',
+    fontSize: '1.1rem',
+
     marginRight: '30px',
+    marginBottom: '10px',
     textAlign: 'left',
   },
 }
