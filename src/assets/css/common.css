@@ -1,3 +1,7 @@
+html{
+  font-size: 0.8rem !important;
+}
+
 body{
   background: #f1f6fb !important;
   color: #0047a4 !important;
@@ -36,16 +40,16 @@ body{
 
 .contentBlock{
   background-color: #ffffff;
-  margin: 2% 4% 3% 4%;
   border-radius: 0.25rem;
 }
 
 .contentBlockTitle{
   display: inline-block;
-  height: 30px;
+  height:3.5vh;
+  line-height: 3.5vh;
   background-color: #c6e0f7;
-  padding: 0 20px;
-  font-size: 20px;
+  padding: 0 1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 

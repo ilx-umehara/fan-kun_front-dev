@@ -9,6 +9,8 @@ import Table from '@mui/material/Table';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 
+import StyledMuiBtnBlue from '../../parts/button/StyledMuiBtnBlue';
+
 function createData(date, action, comment, status, web_entry, web_reserve, identification) {
   return { date, action, comment, status, web_entry, web_reserve, identification };
 }
@@ -49,13 +51,13 @@ function ApplicantsContactHistory(){
   const handleClose = () => setOpen(false);
 
   return (
-    <StyledMuiPaper sx={{ width: '100%', pt: 3, pr: 3, pb: 3, pl: 3 }}>
+    <StyledMuiPaper sx={{ width: '100%', minHeight: '45vh', p: 3 }}>
 
         <div css={styles.titleAndEditBtn}>
-          <p className="contentBlockTitle">コンタクト履歴</p>
-          <Button onClick={handleOpen} variant="contained">新規登録</Button>
+          <p className="contentBlockTitle">対応履歴</p>
+          <StyledMuiBtnBlue onClick={handleOpen} variant="contained">新規登録</StyledMuiBtnBlue>
         </div>
-        <TableContainer component={Paper} sx={{ width: 'initial', height: '47vh', px:1, py:1 }}>
+        <TableContainer component={Paper} sx={{ width: 'initial', height: '30vh', px:1, py:1, fontSize: '0.625rem' }}>
           <Table>
               {contactDatas.map((contactData) => (
                 <TableRow>
@@ -79,7 +81,7 @@ const styles = {
   titleAndEditBtn:{
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: '24px',
+    marginBottom: '1.125rem',
   },
   tdata:{
     padding: '5px 16px',

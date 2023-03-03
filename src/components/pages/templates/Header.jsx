@@ -20,6 +20,8 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 
+import StyledMuiToolbar from '../../parts/toolbar/StyledMuiToolbar'
+
 
 const drawerWidth = 240;
 
@@ -92,25 +94,12 @@ const Header = props => {
     setOpen(false);
   };
 
-  // let responsiveAppBar;
-  // let responsiveToolbar;
-  // const devicePixelRatio = window.devicePixelRatio;
-  // console.log(devicePixelRatio);
-
-  // if(devicePixelRatio > 1 && devicePixelRatio <= 1.25){
-  //   responsiveAppBar = 'responsiveAppBar125';
-  //   responsiveToolbar = 'responsiveToolbar125';
-  // }else if(devicePixelRatio > 1.25 && devicePixelRatio <= 1.5){
-  //   responsiveAppBar = 'responsiveAppBar150';
-  //   responsiveToolbar = 'responsiveToolbar150';
-  // }
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
         <ThemeProvider theme={appBarCustomTheme}>
         <AppBar position="fixed" color={"secondary"} open={open} elevation={0}>
-          <Toolbar>
+          <StyledMuiToolbar>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -120,9 +109,9 @@ const Header = props => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div" sx={{ position: 'absolute', left: '46%' }}>{props.headerTitle}</Typography>
+            <Typography variant="h6" noWrap component="div" sx={{ position: 'absolute', left: '46%', fontSize: '1rem' }}>{props.headerTitle}</Typography>
             <div></div>
-          </Toolbar>
+          </StyledMuiToolbar>
         </AppBar>
       </ThemeProvider>
       <Drawer
@@ -170,9 +159,9 @@ const Header = props => {
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
+      {/* <Main open={open}>
         <DrawerHeader />
-      </Main>
+      </Main> */}
     </Box>
   );
 }

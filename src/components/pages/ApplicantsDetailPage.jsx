@@ -28,9 +28,9 @@ const ApplicantsDetailPage = () => {
   return (
     <>
       <Header headerTitle='応募者管理画面'/>
-      <Box sx={{ width: '100%' }}>
-        <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
-          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+      <Box sx={{ width: '100%', mt: 7, mb: 3 }}>
+        <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:2}}>
+          <Grid item xs={12} sm={12} md={12} lg={6} xl={6} sx={{ display: 'flex', flexDirection: 'column' }}>
             <Grid container spacing={2}>
               <Grid item sx={{ width: '100%' }}>
                 <ApplicantsBasicInfo />
@@ -43,12 +43,11 @@ const ApplicantsDetailPage = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6} xl={6} sx={{ display: 'flex' }}>
+          <Grid item xs={12} sm={12} md={12} lg={6} xl={6} sx={{ display: 'flex', flexDirection: 'column' }}>
           <ApplicantsEntryInfo />
           </Grid>
         </Grid>
       </Box>
-      <Footer />
     </>
   );
 }

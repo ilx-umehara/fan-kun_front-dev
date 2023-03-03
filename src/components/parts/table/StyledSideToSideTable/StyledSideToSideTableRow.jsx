@@ -5,6 +5,7 @@ import TableRow from '@mui/material/TableRow';
 const StyledSideToSideTableRow = styled(TableRow)(() => ({
   display: 'flex',
   alignItems: 'center',
+  fontSize: '0.625rem',
 }))
 
 export default StyledSideToSideTableRow;

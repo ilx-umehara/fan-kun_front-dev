@@ -21,6 +21,8 @@ import Incomplete from "../../parts/icons/Incomplete";
 import DummyEntryDataNc from "../../../libs/Const/DummyEntryDataNc";
 import DummyEntryDataOs from "../../../libs/Const/DummyEntryDataOs";
 
+import StyledMuiBtnBlue from '../../parts/button/StyledMuiBtnBlue';
+
 const tabHeaderNc = [
   { 'tabTitle': '基本情報', 'progress': '済'},
   { 'tabTitle': '希望条件', 'progress': null}
@@ -56,7 +58,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ pt: 3, pr: 3, pb: 1, pl: 3 }}>
+        <Box sx={{ p: 1, }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -96,7 +98,7 @@ function ApplicantsEntryInfo() {
 
   if(division === 'NC'){
     return (
-      <StyledMuiPaper sx={{ width: '100%', height: '73.33333333333333vh' }}>
+      <StyledMuiPaper sx={{ width: '100%' }}>
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
@@ -110,7 +112,7 @@ function ApplicantsEntryInfo() {
             <TabPanel value={value} index={k}>
               <div css={styles.titleAndEditBtn}>
                 <p className="contentBlockTitle">エントリー情報</p>
-                <Button onClick={handleOpenEditInfo} variant="contained">編集</Button>
+                <StyledMuiBtnBlue onClick={handleOpenEditInfo} variant="contained">編集</StyledMuiBtnBlue>
                 <Modal
                   open={open}
                   onClose={handleCloseEditInfo}
@@ -135,13 +137,13 @@ function ApplicantsEntryInfo() {
             </TabPanel>
             )
           })}
-          {!open ? (<Button onClick={handleOpenSendRequest} variant="contained" sx={{mb:4}}>修正依頼の送信</Button>) : (<div></div>)}
+          {!open ? (<StyledMuiBtnBlue onClick={handleOpenSendRequest} variant="contained" sx={{mb:4}}>修正依頼の送信</StyledMuiBtnBlue>) : (<div></div>)}
         </Box>
       </StyledMuiPaper>
     );
   }else if(division === 'OS') {
     return (
-      <StyledMuiPaper sx={{ minHeight: '73.33333333333333vh' }}>
+      <StyledMuiPaper sx={{ width: '100%', height: '100%' }}>
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
             <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
@@ -150,41 +152,44 @@ function ApplicantsEntryInfo() {
               })}
             </StyledMuiTabs>
           </Box>
-          {tabPanelListsOs.map((panel, j) => {
-            return (
-              <TabPanel value={value} index={j}>
-                <div css={styles.titleAndEditBtn}>
-                  <p className="contentBlockTitle">エントリー情報</p>
-                  <Button onClick={handleOpenEditInfo} variant="contained">編集</Button>
-                  <Modal
-                    open={open}
-                    onClose={handleCloseEditInfo}
-                    aria-labelledby="modal-title"
-                    aria-describedby="modal-description"
-                  >
-                    <ModalEditEntryInfo/>
-                  </Modal>
-                </div>
+            {tabPanelListsOs.map((panel, j) => {
+              return (
+                <TabPanel value={value} index={j}>
+                  <div css={styles.titleAndEditBtn}>
+                    <p className="contentBlockTitle">エントリー情報</p>
+                    <StyledMuiBtnBlue onClick={handleOpenEditInfo} variant="contained">編集</StyledMuiBtnBlue>
+                    <Modal
+                      open={open}
+                      onClose={handleCloseEditInfo}
+                      aria-labelledby="modal-title"
+                      aria-describedby="modal-description"
+                    >
+                      <ModalEditEntryInfo/>
+                    </Modal>
+                  </div>
 
-                
-                <TableContainer component={Paper} sx={{ mt:3, height: '65vh' }}>
-                  <Table sx={{ minWidth: 250 }} aria-label="simple table">
-                  {panel.map((item) => {
-                    return (
-                      <StyledMuiTableRow>
-                        <StyledMuiTableHead align="left">{item.thead}</StyledMuiTableHead>
-                        <StyledMuiTableCell>{item.tdata}</StyledMuiTableCell>
-                      </StyledMuiTableRow>
-                    );
-                  })}
-                  </Table>
-                </TableContainer>
-              </TabPanel>
-            )
-          })}
-          
+                  
+                  <TableContainer component={Paper} sx={{ mt:1,height: '65vh'}}>
+                    <Table sx={{ minWidth: 250,height: '100%' }} aria-label="simple table">
+                    {panel.map((item) => {
+                      return (
+                        <StyledMuiTableRow>
+                          <StyledMuiTableHead align="left">{item.thead}</StyledMuiTableHead>
+                          <StyledMuiTableCell>{item.tdata}</StyledMuiTableCell>
+                        </StyledMuiTableRow>
+                      );
+                    })}
+                    </Table>
+                  </TableContainer>
+                  {/* <div>
+                    <StyledMuiBtnBlue onClick={handleOpenSendRequest} variant="contained" sx={{mt: 1}}>修正依頼の送信</StyledMuiBtnBlue>
+                  </div> */}
+                </TabPanel>
+              )
+            })}
+
         </Box>
-        <Button onClick={handleOpenSendRequest} variant="contained" sx={{mt: 1}}>修正依頼の送信</Button>
+        
       </StyledMuiPaper>
     );
   }
@@ -206,14 +211,23 @@ const styles = {
     maxWidth: 'initial',
     minWidth: 'initial',
     width: '50%',
-    minHeight: '45px',
+    minHeight: '1vh',
+    padding: 'initial',
   },
   MuiTabOs:{
     maxWidth: 'initial',
     minWidth: 'initial',
     width: '16.66%',
-    minHeight: '45px',
-  }
+    minHeight: '1vh',
+    fontSize: '0.625rem',
+    padding: '0.625rem 0',
+  },
+  entryAreaBlock:{
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+
 }
 
 export default ApplicantsEntryInfo;
