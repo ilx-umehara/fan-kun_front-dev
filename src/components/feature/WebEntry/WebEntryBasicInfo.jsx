@@ -15,7 +15,7 @@ import SelectedTransportation from "../../parts/select/SelectedTransportation";
 function WebEntryBasicInfo(){
   return (
     <>
-      <StyledMuiPaper sx={{ width: '50%', overflow: 'hidden', py: 5, textAlign: 'left', mt: 10 }}>
+      <StyledMuiPaper css={styles.responsiveStyle}>
         <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:5}}>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{mb:3}}>
           <h2 className="contentBlockTitle">基本情報</h2>
@@ -153,6 +153,16 @@ function WebEntryBasicInfo(){
 }
 
 const styles = {
+  responsiveStyle:{
+    width: '60%',
+    "@media (max-width:700px)":{
+      width: '80%',
+    },
+    overflow: 'hidden',
+    py: 5,
+    textAlign: 'left',
+    mt: 10,
+  },
   inputItem:{
     width: '100%',
     marginBottom: '20px',

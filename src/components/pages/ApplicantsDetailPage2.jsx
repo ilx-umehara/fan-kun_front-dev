@@ -27,8 +27,8 @@ const ApplicantsDetailPage2 = () => {
 
   return (
     <>
-
-      <Box sx={{ width: '100%', mt: 2, mb: 2, }}>
+      <Header headerTitle='応募者管理画面'/>
+      <Box sx={{ width: '100%', mt: 6, mb: 2, }}>
         <Grid container spacing={2} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2 }} sx={{px:10}}>
           <Grid item xs={12} sm={12} md={12} lg={4} xl={4} sx={{ display: 'flex', flexDirection: 'column' }}>
             <ApplicantsBasicInfo2 />
