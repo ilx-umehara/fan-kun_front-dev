@@ -14,6 +14,7 @@ const StyledMuiTableCell = styled(TableCell)(({ theme }) => ({
   color: '#0047A4',
   verticalAlign: 'baseline',
   fontWeight: 'bold',
+  fontSize: '0.625rem',
 }));
 
 export default StyledMuiTableCell;

@@ -10,7 +10,7 @@ function ApplicantsListPage() {
   return (
     <>
       <Header headerTitle='応募者一覧画面'/>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%', mt: 7, mb: 3 }}>
         <Grid container spacing={2} rowSpacing={2} sx={{px:10}}>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <ApplicantsSearch />

@@ -11,11 +11,11 @@ import Paper from '@mui/material/Paper';
 import Modal from '@mui/material/Modal';
 import ModalEditEntryInfo from "../modals/ModalEditEntryInfo";
 
-import StyledMuiTabs from '../../parts/tab/StyledMuiTabs';
+import StyledMuiTabs2 from '../../parts/tab/StyledMuiTabs2';
 import StyledMuiTableCell from '../../parts/table/StyledMuiTable/StyledMuiTableCell';
 import StyledMuiTableHead from '../../parts/table/StyledMuiTable/StyledMuiTableHead';
 import StyledMuiTableRow from '../../parts/table/StyledMuiTable/StyledMuiTableRow';
-import StyledMuiPaper from '../../parts/surface//StyledMuiPaper';
+import StyledMuiPaper from '../../parts/surface/StyledMuiPaper';
 import CheckCircle from '../../parts/icons/CheckCircle';
 import Incomplete from "../../parts/icons/Incomplete";
 import DummyEntryDataNc from "../../../libs/Const/DummyEntryDataNc";
@@ -56,6 +56,7 @@ function TabPanel(props) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+      css={styles.tabpanel}
     >
       {value === index && (
         <Box sx={{ p: 1, }}>
@@ -101,11 +102,11 @@ function ApplicantsEntryInfo() {
       <StyledMuiPaper sx={{ width: '100%' }}>
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
+            <StyledMuiTabs2 value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
               {tabHeaderNc.map((head, i) => {
                 return <Tab label={head.tabTitle} {...a11yProps({i})} css={ styles.MuiTabNc } iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
               })}
-            </StyledMuiTabs>
+            </StyledMuiTabs2>
           </Box>
           {tabPanelListsNc.map((panel, k) => {
             return (
@@ -122,7 +123,7 @@ function ApplicantsEntryInfo() {
                   <ModalEditEntryInfo/>
                 </Modal>
               </div>
-              <TableContainer component={Paper} sx={{ my:3, height: '47.22222222222222vh' }}>
+              <TableContainer component={Paper} sx={{ my:3, height: '' }}>
                 <Table sx={{ minWidth: 250 }} aria-label="simple table">
                 {panel.map((item) => {
                   return (
@@ -144,13 +145,13 @@ function ApplicantsEntryInfo() {
   }else if(division === 'OS') {
     return (
       <StyledMuiPaper sx={{ width: '100%', height: '100%' }}>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', display: 'flex' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
-            <StyledMuiTabs value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
+            <StyledMuiTabs2 value={value} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { display: 'none' } }}>
               {tabHeaderOs.map((head, i) => {
                 return <Tab label={head.tabTitle} {...a11yProps({i})} css={ styles.MuiTabOs } iconPosition="end" icon={head.progress === '済' ? <CheckCircle/> : head.progress === '未' ? <Incomplete/> : null}/>
               })}
-            </StyledMuiTabs>
+            </StyledMuiTabs2>
           </Box>
             {tabPanelListsOs.map((panel, j) => {
               return (
@@ -169,8 +170,8 @@ function ApplicantsEntryInfo() {
                   </div>
 
                   
-                  <TableContainer component={Paper} sx={{ mt:1,height: '55vh'}}>
-                    <Table sx={{ minWidth: 250,height: '100%' }} aria-label="simple table">
+                  <TableContainer component={Paper} sx={{ mt:1, height: '50vh'}}>
+                    <Table sx={{ width: '100%', height: '100%' }} aria-label="simple table">
                     {panel.map((item) => {
                       return (
                         <StyledMuiTableRow>
@@ -207,6 +208,9 @@ const styles = {
     background: 'red',
     padding: '1% 0',
   },
+  tabpanel:{
+    width: '100%',
+  },
   MuiTabNc:{
     maxWidth: 'initial',
     minWidth: 'initial',
@@ -217,7 +221,7 @@ const styles = {
   MuiTabOs:{
     maxWidth: 'initial',
     minWidth: 'initial',
-    width: '16.66%',
+    width: '100px',
     minHeight: '1vh',
     fontSize: '0.625rem',
     padding: '0.625rem 0',

@@ -3,7 +3,7 @@ import Tabs from '@mui/material/Tabs';
 
 const StyledMuiTabs = styled(Tabs)(({ theme }) => ({
   '& .MuiTabs-flexContainer': {
-
+    flexDirection: 'column',
     flexWrap: 'wrap',
   },
   '& .Mui-selected': {

@@ -102,7 +102,7 @@ function ApplicantsList(){
         setDynamicStyles({
           ...styles,
           position: 'fixed',
-          top: '64px',
+          top: '2.5rem',
           left: '0',
           right: '0',
           margin: '0 80px',
