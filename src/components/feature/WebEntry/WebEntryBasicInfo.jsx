@@ -46,9 +46,9 @@ function WebEntryBasicInfo(){
               <div css={styles.inputItemHeader}>最寄り駅①</div>
               <div css={styles.inputItemForm}>
                 <span>沿線&emsp;</span>
-                <TextField label="沿線" id="railway1" size="small" sx={{ width: '300px', mr: 5 }} placeholder="JR山手線" />
+                <TextField label="沿線" id="railway1" size="small" sx={{ width: '250px', mr: 5 }} placeholder="JR山手線" />
                 <span>駅名&emsp;</span>
-                <TextField label="駅名" id="station1" size="small" sx={{ width: '200px', mr: 1 }} placeholder="新宿" />
+                <TextField label="駅名" id="station1" size="small" sx={{ width: '150px', mr: 1 }} placeholder="新宿" />
                 <span>駅&emsp;</span>
               </div>
             </div>
@@ -75,9 +75,9 @@ function WebEntryBasicInfo(){
               <div css={styles.inputItemHeader}>最寄り駅②<span className="optionalTag">任意</span></div>
               <div css={styles.inputItemForm}>
                 <span>沿線&emsp;</span>
-                <TextField label="沿線" id="railway2" size="small" sx={{ width: '300px', mr: 5 }} placeholder="JR山手線" />
+                <TextField label="沿線" id="railway2" size="small" sx={{ width: '250px', mr: 5 }} placeholder="JR山手線" />
                 <span>駅名&emsp;</span>
-                <TextField label="駅名" id="station2" size="small" sx={{ width: '200px', mr: 1 }} placeholder="新宿" />
+                <TextField label="駅名" id="station2" size="small" sx={{ width: '150px', mr: 1 }} placeholder="新宿" />
                 <span>駅&emsp;</span>
               </div>
             </div>
@@ -139,12 +139,7 @@ function WebEntryBasicInfo(){
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{ display: 'flex', justifyContent: 'center', mt:5 }}>
-            <div css={styles.btnArea}>
-              <Button variant="contained" color="inherit" sx={{ mr: 10 }}>戻る</Button>
-              <Button variant="contained" color="primary" sx={{ ml: 10 }}>次へ</Button>
-            </div>
-          </Grid>
+
         </Grid>
 
       </StyledMuiPaper>
@@ -159,9 +154,8 @@ const styles = {
       width: '80%',
     },
     overflow: 'hidden',
-    py: 5,
     textAlign: 'left',
-    mt: 10,
+    mt: 5,
   },
   inputItem:{
     width: '100%',

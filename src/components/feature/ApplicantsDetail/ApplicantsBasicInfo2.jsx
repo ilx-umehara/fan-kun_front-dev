@@ -49,7 +49,8 @@ function BasicInformation() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const devicePixelRatio = window.devicePixelRatio;
+  console.log(devicePixelRatio);
   return(
     <StyledMuiPaper sx={{ width: '100%', height: '100%', p: 3 }}>
       <div className="contentBlock" css={styles.contentBasicInformation}>
@@ -60,7 +61,7 @@ function BasicInformation() {
               return(
                 <div css={styles.nameArea}>
                   <p>{name.sei_kana}&emsp;{name.mei_kana}</p>
-                  <h2>{name.sei_kanji}&emsp;{name.mei_kanji}</h2>
+                  <h2>{name.sei_kanji}&emsp;{name.mei_kanji}{devicePixelRatio}</h2>
                   <p>応募者ID:{name.appli_id}</p>
                 </div>
               )

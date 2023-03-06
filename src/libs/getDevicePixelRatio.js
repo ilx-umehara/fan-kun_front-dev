@@ -1,6 +1,6 @@
 export default function getDevicePixelRatio(responsive){
   const devicePixelRatio = window.devicePixelRatio;
-
+  console.log(devicePixelRatio);
   if(devicePixelRatio > 1 && devicePixelRatio <= 1.25){
     responsive = 'responsive125';
   }else if(devicePixelRatio > 1.25 && devicePixelRatio <= 1.50){
