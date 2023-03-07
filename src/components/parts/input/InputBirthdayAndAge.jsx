@@ -74,7 +74,7 @@ function InputBirthdayAndAge() {
     <>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>生年月日</div>
+          <div css={styles.inputItemHeader}>生年月日<span className="requiredTag">必須</span></div>
           <div css={styles.inputItemForm}>
             <TextField id="birthday_y" size="small" sx={{ width: '120px', mr: 1 }} value={birthdayYear} onChange={handleChangeBirthdayYear}/>
             <span>年</span>
@@ -87,7 +87,7 @@ function InputBirthdayAndAge() {
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>年齢</div>
+          <div css={styles.inputItemHeader}>年齢<span className="requiredTag">必須</span></div>
           <div css={styles.inputItemForm}>
             <TextField id="age" size="small" sx={{ width: '60px', mr: 1 }} value={age} onChange={handleChangeAge}/>
             <span>歳</span>

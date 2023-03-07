@@ -31,7 +31,7 @@ const InputAddress = () => {
     <>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(郵便番号)</div>
+          <div css={styles.inputItemHeader}>住所(郵便番号)<span className="requiredTag">必須</span></div>
           <div css={styles.inputItemForm}>
             <TextField {...register('zipCode')} id="postcode" size="small" sx={{ width: '70px', mr: 1 }}/>
             <span>&nbsp;-&nbsp;</span>
@@ -41,7 +41,7 @@ const InputAddress = () => {
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(都道府県)</div>
+          <div css={styles.inputItemHeader}>住所(都道府県)<span className="requiredTag">必須</span></div>
           <div css={styles.inputItemForm}>
             <SelectedPrefecture id="prefecture" size="small" sx={{ width: '160px', mr: 1 }} value={prefecture} onChange={(e) => setPrefecture(e.target.value)}/>
           </div>
@@ -49,7 +49,7 @@ const InputAddress = () => {
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(市区町村)</div>
+          <div css={styles.inputItemHeader}>住所(市区町村)<span className="requiredTag">必須</span></div>
           <div css={styles.inputItemForm}>
             <TextField label="市区町村" id="city" size="small" sx={{ width: '300px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
           </div>
@@ -57,7 +57,7 @@ const InputAddress = () => {
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(町域・番地)</div>
+          <div css={styles.inputItemHeader}>住所(町域・番地)<span className="requiredTag">必須</span></div>
           <div css={styles.inputItemForm}>
             <TextField label="町域・番地" id="city" size="small" sx={{ width: '300px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
           </div>
@@ -65,7 +65,7 @@ const InputAddress = () => {
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(建物名など)</div>
+          <div css={styles.inputItemHeader}>住所(建物名など)<span className="optionalTag">任意</span></div>
           <div css={styles.inputItemForm}>
             <TextField label="建物名など" id="city" size="small" sx={{ width: '600px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
           </div>

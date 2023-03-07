@@ -38,7 +38,7 @@ const tabHeaderOs = [
   {'tabTitle': '職歴/学歴', 'progress': null},
   {'tabTitle': '社内用', 'progress': null},
   {'tabTitle': '緊急連絡先', 'progress': '済'},
-  {'tabTitle': '給与口座', 'progress': '済'},
+  {'tabTitle': '\n給与口座\n', 'progress': '済'},
   {'tabTitle': '社保・雇用', 'progress': '未'},
   {'tabTitle': '在留カード', 'progress': '未'},
 ];

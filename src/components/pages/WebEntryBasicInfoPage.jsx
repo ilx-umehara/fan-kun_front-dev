@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import ProgressBar from "../feature/WebEntry/ProgressBar";
 import Footer from "./templates/Footer";
@@ -13,37 +14,25 @@ import ReadingBar from '../parts/progressBar/ReadingBar';
 
 
 
-const WebEntryPage = () => {
+function WebEntryBasicInfoPage () {
 
-
-  const [count, setCount] = useState(0);
-
-  const handleClickPrevBtn = () => {
+  const handleClickBtn = () => {
     window.scroll({top: 0});
-    setCount((prevCount) => prevCount - 1);
   }
 
-  const handleClickNextBtn = () => {
-    window.scroll({top: 0});
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const entryForm = 
-    count === 0 
-    ? <WebEntryBasicInfo/>
-    : count === 1 ? <WebEntryNc2/>: <ProgressBar/>;
-  console.log(count);
   return (
     <>
       <ReadingBar/>
       <Box sx={{ width: '100%', mt: 2 }}>
         <Grid container spacing={2} rowSpacing={2} sx={{px:5, pt: 5, display: 'flex', justifyContent: 'center'}}>
-          {entryForm}
+          <WebEntryBasicInfo/>
         </Grid>
         <Grid container spacing={2} rowSpacing={2} sx={{px:5, pt: 5, display: 'flex', justifyContent: 'center'}}>
         <div css={styles.btnArea}>
-          <Button variant="contained" color="inherit" sx={{ mr: 10 }} onClick={handleClickPrevBtn}>戻る</Button>
-          <Button variant="contained" color="primary" sx={{ ml: 10 }} onClick={handleClickNextBtn}>次へ</Button>
+          <Button variant="contained" color="inherit" sx={{ mr: 10 }} onClick={handleClickBtn}>戻る</Button>
+          <Button variant="contained" color="primary" sx={{ ml: 10 }} onClick={handleClickBtn}>
+            <Link to="/web_entry/nc_2" css={styles.link}>次へ</Link>
+          </Button>
         </div>
         </Grid>
       </Box>
@@ -56,7 +45,10 @@ const styles = {
   progressBarBox: {
     position: 'fixed',
     zIndex: '30',
-  }
+  },
+  link:{
+    color: '#FFFFFF'
+  },
 }
 
-export default WebEntryPage;
+export default WebEntryBasicInfoPage;

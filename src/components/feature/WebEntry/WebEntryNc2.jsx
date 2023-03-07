@@ -12,9 +12,6 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 import StyledMuiPaper from '../../parts/surface/StyledMuiPaper';
-import RowRadioButtonsGroup from '../../parts/radio/RadioButtonsSelectGender';
-import InputBirthdayAndAge from '../../parts/input/InputBirthdayAndAge';
-import InputAddress from '../../parts/input/InputAddress';
 import SelectedTransportation from "../../parts/select/SelectedTransportation";
 import SelectedAssistanceToResistance from "../../parts/select/SelectedYesOrNo";
 
@@ -92,7 +89,14 @@ function WebEntryNc2(){
             <div css={styles.inputItem}>
               <div css={styles.inputItemHeader}>残業可否</div>
               <div css={styles.inputItemForm}>
-                <TextField id="concrete_preferred_hours" size="small" sx={{ width: '80px', mr: 1 }} /><span>時まで可能</span>
+                <FormControl sx={{ mr: 2, minWidth: 120 }} size="small">
+                  <Select
+                    defaultValue={10}>
+                    <MenuItem value={10}>可</MenuItem>
+                    <MenuItem value={20}>不可</MenuItem>
+                    <MenuItem value={30}>場合により可</MenuItem>
+                  </Select>
+                </FormControl>
               </div>
             </div>
           </Grid>
@@ -247,7 +251,7 @@ const styles = {
   responsiveStyle:{
     width: '60%',
     "@media (max-width:700px)":{
-      width: '80%',
+      width: '100%',
     },
     overflow: 'hidden',
     textAlign: 'left',

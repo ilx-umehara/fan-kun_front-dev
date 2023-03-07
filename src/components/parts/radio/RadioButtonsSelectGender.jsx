@@ -12,7 +12,7 @@ function RowRadioButtonsGroup() {
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <div css={styles.inputItem}>
-        <div css={styles.inputItemHeader}>性別</div>
+        <div css={styles.inputItemHeader}>性別<span className="requiredTag">必須</span></div>
         <FormControl>
           <RadioGroup
             row

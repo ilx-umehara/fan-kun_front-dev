@@ -12,9 +12,9 @@ function LinearProgressWithLabel(props) {
   return (
 
     <StyledMuiPaper css={styles.responsiveStyle}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Box sx={{ minWidth: 35, mr: 1 }}>
-          <Typography sx={{ fontSize: '0.625rem'}} sx={{ color: '#FFF' }}>達成度</Typography>
+          <Typography sx={{ fontSize: '0.625rem', color: '#FFF'}}>達成度</Typography>
         </Box>
         <Box sx={{ width: '80%', mr: 1 }}>
           <LinearProgress variant="determinate" {...props} color="inherit" sx={{ color: '#98F794' }}/>
@@ -39,7 +39,8 @@ const styles = {
     overflow: 'hidden',
     textAlign: 'left',
     marginTop: '5px',
-    background: '#0063E6'
+    background: '#0063E6',
+    borderRadius: '30px',
     // display: 'flex',
     // justifyContent: 'space-between',
 
@@ -49,7 +50,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     margin: '0 auto',
-
+    
   }
 }
 
