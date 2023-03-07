@@ -149,15 +149,15 @@ function WebEntryBasicInfo(){
 
 const styles = {
   responsiveStyle:{
-    width: '60%',
-    paddingLeft: '5rem',
-    "@media (max-width:700px)":{
-      width: '100%',
-      paddingLeft: '1rem',
+    width: '100%',
+    paddingLeft: '1rem',
+    "@media (min-width:700px)":{
+      width: '60%',
+      paddingLeft: '5rem',
     },
     overflow: 'hidden',
     textAlign: 'left',
-    mt: 5,
+    marginTop: '3rem',
   },
   inputItem:{
     width: '100%',
@@ -165,7 +165,7 @@ const styles = {
   },
   inputItemHeader:{
     fontWeight: 'bold',
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     marginRight: '30px',
     marginBottom: '10px',
     textAlign: 'left',

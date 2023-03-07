@@ -27,7 +27,7 @@ body{
   display: inline-block;
   color: #FFFFFF;
   background-color: #AAAAAA;
-  line-height: 1.2rem;
+  line-height: 1rem;
   font-size: 0.8em;
   font-weight: initial;
   padding: 0.2rem 1rem;
@@ -39,7 +39,7 @@ body{
   display: inline-block;
   color: #FFFFFF;
   background-color: #FF008C;
-  line-height: 1.2rem;
+  line-height: 1rem;
   font-size: 0.8em;
   font-weight: initial;
   padding: 0.2rem 1rem;

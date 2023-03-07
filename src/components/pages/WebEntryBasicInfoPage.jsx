@@ -22,9 +22,9 @@ function WebEntryBasicInfoPage () {
 
   return (
     <>
-      <ReadingBar/>
-      <Box sx={{ width: '100%', mt: 2 }}>
-        <Grid container spacing={2} rowSpacing={2} sx={{px:5, pt: 5, display: 'flex', justifyContent: 'center'}}>
+      <ReadingBar />
+      <Box sx={{ width: '100%', }}>
+        <Grid container sx={{ pt: 1, display: 'flex', justifyContent: 'center'}} css={styles.webEntryContainer}>
           <WebEntryBasicInfo/>
         </Grid>
         <Grid container spacing={2} rowSpacing={2} sx={{px:5, pt: 5, display: 'flex', justifyContent: 'center'}}>
@@ -42,6 +42,10 @@ function WebEntryBasicInfoPage () {
 }
 
 const styles = {
+  webEntryContainer: {
+    padding: '0 1rem',
+
+  },
   progressBarBox: {
     position: 'fixed',
     zIndex: '30',
