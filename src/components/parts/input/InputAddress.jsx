@@ -31,59 +31,79 @@ const InputAddress = () => {
     <>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(郵便番号)<span className="requiredTag">必須</span></div>
-          <div css={styles.inputItemForm}>
-            <TextField {...register('zipCode')} id="postcode" size="small" sx={{ width: '70px', mr: 1 }}/>
-            <span>&nbsp;-&nbsp;</span>
-            <TextField {...register('zipCode')} id="postcode" size="small" sx={{ width: '90px', mx: 1 }}/>
-          </div>
+          <div css={styles.inputItemHeader}>住所(郵便番号)</div>
+          <div className="requiredTag">必須</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} css={styles.inputItemForm} sx={{ mb: 2 }}>
+        <TextField {...register('zipCode')} id="postcode" size="small" sx={{ width: '70px', mr: 1 }}/>
+        <span>&nbsp;―&nbsp;</span>
+        <TextField {...register('zipCode')} id="postcode" size="small" sx={{ width: '90px', mx: 1 }}/>
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(都道府県)<span className="requiredTag">必須</span></div>
-          <div css={styles.inputItemForm}>
-            <SelectedPrefecture id="prefecture" size="small" sx={{ width: '160px', mr: 1 }} value={prefecture} onChange={(e) => setPrefecture(e.target.value)}/>
-          </div>
+          <div css={styles.inputItemHeader}>住所(都道府県)</div>
+          <div className="requiredTag">必須</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} css={styles.inputItemForm} sx={{ mb: 2 }}>
+        <SelectedPrefecture id="prefecture" size="small" sx={{ width: '160px', mr: 1 }} value={prefecture} onChange={(e) => setPrefecture(e.target.value)}/>
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(市区町村)<span className="requiredTag">必須</span></div>
-          <div css={styles.inputItemForm}>
-            <TextField label="市区町村" id="city" size="small" sx={{ width: '300px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
-          </div>
+          <div css={styles.inputItemHeader}>住所(市区町村)</div>
+          <div className="requiredTag">必須</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} css={styles.inputItemForm} sx={{ mb: 2 }}>
+        <TextField label="市区町村" id="city" size="small" sx={{ width: '300px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(町域・番地)<span className="requiredTag">必須</span></div>
-          <div css={styles.inputItemForm}>
-            <TextField label="町域・番地" id="city" size="small" sx={{ width: '300px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
-          </div>
+          <div css={styles.inputItemHeader}>住所(町域・番地)</div>
+          <div className="requiredTag">必須</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} css={styles.inputItemForm} sx={{ mb: 2 }}>
+        <TextField label="町域・番地" id="city" size="small" sx={{ width: '300px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>住所(建物名など)<span className="optionalTag">任意</span></div>
-          <div css={styles.inputItemForm}>
-            <TextField label="建物名など" id="city" size="small" sx={{ width: '600px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
-          </div>
+          <div css={styles.inputItemHeader}>住所(建物名など)</div>
+          <div className="optionalTag">任意</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} css={styles.inputItemForm} sx={{ mb: 2 }}>
+        <TextField label="建物名など" id="city" size="small" sx={{ width: '600px', mr: 1 }} value={city} onChange={(e) => setCity(e.target.value)}/>
       </Grid>
     </>
   );
 };
 const styles = {
+  responsiveStyle:{
+    width: '100%',
+    paddingLeft: '1rem',
+    "@media (min-width:700px)":{
+      width: '60%',
+      paddingLeft: '5rem',
+    },
+    overflow: 'hidden',
+    textAlign: 'left',
+    marginTop: '3rem',
+  },
   inputItem:{
     width: '100%',
-    marginBottom: '20px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    "@media (min-width:700px)":{
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+    },
   },
   inputItemHeader:{
     fontWeight: 'bold',
-    fontSize: '1.1rem',
-    marginRight: '30px',
-    marginBottom: '10px',
+    fontSize: '1rem',
     textAlign: 'left',
   },
   inputItemForm:{

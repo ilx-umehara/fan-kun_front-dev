@@ -24,16 +24,16 @@ function WebEntryBasicInfoPage () {
     <>
       <ReadingBar />
       <Box sx={{ width: '100%', }}>
-        <Grid container sx={{ pt: 1, display: 'flex', justifyContent: 'center'}} css={styles.webEntryContainer}>
+        <Grid container sx={{ pt: 1, }} css={styles.webEntryContainer}>
           <WebEntryBasicInfo/>
         </Grid>
         <Grid container spacing={2} rowSpacing={2} sx={{px:5, pt: 5, display: 'flex', justifyContent: 'center'}}>
-        <div css={styles.btnArea}>
-          <Button variant="contained" color="inherit" sx={{ mr: 10 }} onClick={handleClickBtn}>戻る</Button>
-          <Button variant="contained" color="primary" sx={{ ml: 10 }} onClick={handleClickBtn}>
-            <Link to="/web_entry/nc_2" css={styles.link}>次へ</Link>
-          </Button>
-        </div>
+          <div css={styles.btnArea}>
+            <Button variant="contained" color="inherit" sx={{ mr: 10 }} onClick={handleClickBtn}>戻る</Button>
+            <Button variant="contained" color="primary" sx={{ ml: 10 }} onClick={handleClickBtn}>
+              <Link to="/web_entry/nc_2" css={styles.link}>次へ</Link>
+            </Button>
+          </div>
         </Grid>
       </Box>
       <Footer/>
@@ -44,7 +44,8 @@ function WebEntryBasicInfoPage () {
 const styles = {
   webEntryContainer: {
     padding: '0 1rem',
-
+    display: 'flex',
+    justifyContent: 'center'
   },
   progressBarBox: {
     position: 'fixed',

@@ -74,45 +74,65 @@ function InputBirthdayAndAge() {
     <>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>生年月日<span className="requiredTag">必須</span></div>
-          <div css={styles.inputItemForm}>
-            <TextField id="birthday_y" size="small" sx={{ width: '120px', mr: 1 }} value={birthdayYear} onChange={handleChangeBirthdayYear}/>
-            <span>年</span>
-            <TextField id="birthday_m" size="small" sx={{ width: '60px', ml: 5, mr: 1 }} value={birthdayMonth} onChange={handleChangeBirthdayMonth}/>
-            <span>月</span>
-            <TextField id="birthday_d" size="small" sx={{ width: '60px', ml: 5, mr: 1 }} value={birthdayDay} onChange={handleChangeBirthdayDay}/>
-            <span>日</span>
-          </div>
+          <div css={styles.inputItemHeader}>生年月日</div>
+          <div className="requiredTag">必須</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={2} xl={2} css={styles.inputItemForm}>
+        <TextField type="number" id="birthday_y" size="small" sx={{ width: '120px', mr:1 }} value={birthdayYear} onChange={handleChangeBirthdayYear}/>
+        <span>年</span>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={2} xl={2} css={styles.inputItemForm}>
+        <TextField type="number" id="birthday_m" size="small" sx={{ width: '80px', mr:1 }} value={birthdayMonth} onChange={handleChangeBirthdayMonth}/>
+        <span>月</span>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={2} xl={2} css={styles.inputItemForm}>
+        <TextField type="number" id="birthday_d" size="small" sx={{ width: '80px', mr:1 }} value={birthdayDay} onChange={handleChangeBirthdayDay}/>
+        <span>日</span>
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div css={styles.inputItem}>
-          <div css={styles.inputItemHeader}>年齢<span className="requiredTag">必須</span></div>
-          <div css={styles.inputItemForm}>
-            <TextField id="age" size="small" sx={{ width: '60px', mr: 1 }} value={age} onChange={handleChangeAge}/>
-            <span>歳</span>
-          </div>
+          <div css={styles.inputItemHeader}>年齢</div>
+          <div className="requiredTag">必須</div>
         </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} css={styles.inputItemForm}>
+        <TextField id="age" size="small" sx={{ width: '80px', mr: 1 }} value={age} onChange={handleChangeAge}/>
+        <span>歳</span>
       </Grid>
     </>
   )
 }
 const styles = {
+  responsiveStyle:{
+    width: '100%',
+    paddingLeft: '1rem',
+    "@media (min-width:700px)":{
+      width: '60%',
+      paddingLeft: '5rem',
+    },
+    overflow: 'hidden',
+    textAlign: 'left',
+    marginTop: '3rem',
+  },
   inputItem:{
     width: '100%',
-    marginBottom: '20px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    "@media (min-width:700px)":{
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+    },
   },
   inputItemHeader:{
     fontWeight: 'bold',
-    fontSize: '1.1rem',
-    width: '200px',
-    marginRight: '30px',
-    marginBottom: '10px',
+    fontSize: '1rem',
     textAlign: 'left',
   },
   inputItemForm:{
     display:'flex',
     alignItems: 'center',
-  }
+  },
 }
 export default InputBirthdayAndAge;

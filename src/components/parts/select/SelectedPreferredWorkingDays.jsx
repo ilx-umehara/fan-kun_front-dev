@@ -5,28 +5,31 @@ import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
-const transportations = [
-  '公共交通機関',
-  '自家用車',
-  '自転車',
-  '徒歩',
+const workingDays = [
+  '週1',
+  '週2',
+  '週3',
+  '週4',
+  '週5',
+  '週6',
+  '週7',
 ]
 
-const SelectedTransportation = () => {
-  const [transportation, setTransportation] = React.useState('');
-  const handleChangeTransportation = (event) => {
-    setTransportation(event.target.value);
+function SelectedPreferredWorkingDays() {
+  const [workingDay, setWorkingDay] = React.useState('');
+  const handleChangeWorkingDay = (event) => {
+    setWorkingDay(event.target.value);
   };
   
   return (
     <FormControl sx={{ mr: 2, minWidth: 200 }} size="small">
     <Select
-      labelId="transportation"
-      id="transportation"
-      value={transportation}
+      labelId="workingDay"
+      id="workingDay"
+      value={workingDay}
       displayEmpty
 
-      onChange={handleChangeTransportation}
+      onChange={handleChangeWorkingDay}
       renderValue={(selected) => {
         if (selected.length === 0) {
           return <em>選択してください</em>;
@@ -35,7 +38,7 @@ const SelectedTransportation = () => {
       }}
     >
       <MenuItem value="" disabled><em>選択してください</em></MenuItem>
-      {transportations.map((item) => (
+      {workingDays.map((item) => (
         <MenuItem value={item}>{item}</MenuItem>
       ))}
     </Select>
@@ -43,4 +46,4 @@ const SelectedTransportation = () => {
   )
 }
 
-export default SelectedTransportation;
+export default SelectedPreferredWorkingDays;
