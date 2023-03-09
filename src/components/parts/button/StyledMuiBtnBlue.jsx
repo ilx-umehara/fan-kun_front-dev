@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 
 const StyledMuiBtnBlue = styled(Button)(() => ({
   transform: 'scale(0.75)',
-  transformOrigin: 'right top'
+  transformOrigin: 'right top',
 }))
 
 export default StyledMuiBtnBlue;

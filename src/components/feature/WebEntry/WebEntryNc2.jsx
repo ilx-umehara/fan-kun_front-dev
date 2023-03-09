@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Grid from "@mui/material/Grid";
 import TextField from '@mui/material/TextField';
@@ -23,6 +24,10 @@ import CheckedPreferredWorkingHours from "../../parts/checkbox/CheckedPreferredW
 import CheckedPreferredFacilityType from "../../parts/checkbox/CheckedPreferredFacilityType";
 
 function WebEntryNc2(){
+  const handleClickBtn = () => {
+    window.scroll({top: 0});
+  }
+  
   return (
     <>
       <StyledMuiPaper css={styles.responsiveStyle}>
@@ -266,7 +271,16 @@ function WebEntryNc2(){
             <SelectPreferredPriority />
           </Grid>
         </Grid>
-
+        <Grid container spacing={2} rowSpacing={2} sx={{px:5, pt: 5, display: 'flex', justifyContent: 'center'}}>
+          <div css={styles.btnArea}>
+            <Button variant="contained" color="inherit" sx={{ mr: 5 }} onClick={handleClickBtn}>
+              <Link to="/web_entry/basic_info" css={styles.link}>戻る</Link>
+            </Button>
+            <Button variant="contained" color="primary" sx={{ ml: 5 }} onClick={handleClickBtn}>
+              <Link to="/web_entry/confirm" css={styles.link}>確認する</Link>
+            </Button>
+          </div>
+        </Grid>
       </StyledMuiPaper>
     </>
   )
@@ -306,6 +320,9 @@ const styles = {
   btnArea:{
     display: 'flex',
     justifyContent: 'center',
-  }
+  },
+  link:{
+    color: '#FFFFFF'
+  },
 }
 export default WebEntryNc2;

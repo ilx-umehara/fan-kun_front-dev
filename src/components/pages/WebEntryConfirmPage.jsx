@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 import ProgressBar from "../feature/WebEntry/ProgressBar";
 import Footer from "./templates/Footer";
-import WebEntryBasicInfo from '../feature/WebEntry/WebEntryBasicInfo';
-import WebEntryNc2 from '../feature/WebEntry/WebEntryNc2';
+import WebEntryConfirm from '../feature/WebEntry/WebEntryConfirm';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Button from '@mui/material/Button';
@@ -14,18 +13,15 @@ import ReadingBar from '../parts/progressBar/ReadingBar';
 
 
 
-function WebEntryBasicInfoPage () {
-
+function WebEntryConfirmPage() {
   const handleClickBtn = () => {
     window.scroll({top: 0});
   }
-
   return (
     <>
-      <ReadingBar />
-      <Box sx={{ width: '100%', }}>
+      <Box sx={{ width: '100%' }}>
         <Grid container sx={{ pt: 1, }} css={styles.webEntryContainer}>
-          <WebEntryBasicInfo/>
+          <WebEntryConfirm/>
         </Grid>
       </Box>
       <Footer/>
@@ -48,4 +44,4 @@ const styles = {
   },
 }
 
-export default WebEntryBasicInfoPage;
+export default WebEntryConfirmPage;
